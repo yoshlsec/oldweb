@@ -77,6 +77,16 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
     </item>
     
     <item>
+      <title>PsExec / CyberDefender</title>
+      <link>https://llo0zy.github.io/posts/psexec-hunt/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/psexec-hunt/</guid>
+      <description>Misión Nos están pidiendo que analicemos un registro de red donde un atacante a logrado registrarse como un usuario y luego pivotar a otro, nos exigen que les mostremos los siguientes datos:
+ IP del atacante Hostname de la primera máquina Username de la primera máquina Hostname de la segunda máquina El comando que ha usado Las carpetas donde ha pivotado  Empezamos analizado las conversaciones Las conversaciones son los paquetes que tienen 2 hosts o más que se transmiten información en wireshark podemos ver una tabla de estas, para ello pulsaremos el botón superior: Statistics &amp;gt; Conversations:</description>
+    </item>
+    
+    <item>
       <title>Red Miners / HTB Forensics</title>
       <link>https://llo0zy.github.io/posts/red-miners/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
@@ -92,6 +102,16 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
       
       <guid>https://llo0zy.github.io/posts/wrong-spooky-season/</guid>
       <description>Mission &amp;ldquo;I told them it was too soon and in the wrong season to deploy such a website, but they assured me that theming it properly would be enough to stop the ghosts from haunting us. I was wrong.&amp;rdquo; Now there is an internal breach in the Spooky Network and you need to find out what happened. Analyze the the network traffic and find how the scary ghosts got in and what they did.</description>
+    </item>
+    
+    <item>
+      <title>Logger / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/logger/</link>
+      <pubDate>Sat, 21 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/logger/</guid>
+      <description>Misión Nos han dado un pcapng con un filtro ya hecho de un protocolo usb en el cual nos informan de un posible keylogger (malware que te lee las teclas), y tenemos que encontrar lo que el keylogger recopilo.
+Filtrando con Wireshark Empezaremos filtrando por los paquetes que tengan contenido en su interior, para esto el frame del paquete tendra que ser 0x01, en [[magik numbers]] equivalente a: 1b 00 20</description>
     </item>
     
     <item>

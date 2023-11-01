@@ -18,5 +18,15 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
  bundle.pem  chalcap.pcapng  secrets.log bro: (Directorio)  conn.log  dns.log  files.log  http.log  packet_filter.log  ssl.log  weird.log Buscando lo que es el archivo secrets.log vemos que es para leer el texto plano de un paquete SSL/TLS, investigando más logramos introducir estos &amp;ldquo;secretos&amp;rdquo; en las preferencias (Edit &amp;gt; Preferences) de nuestro wireshark, para no tener problema alguno:</description>
     </item>
     
+    <item>
+      <title>PsExec / CyberDefender</title>
+      <link>https://llo0zy.github.io/posts/psexec-hunt/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/psexec-hunt/</guid>
+      <description>Misión Nos están pidiendo que analicemos un registro de red donde un atacante a logrado registrarse como un usuario y luego pivotar a otro, nos exigen que les mostremos los siguientes datos:
+ IP del atacante Hostname de la primera máquina Username de la primera máquina Hostname de la segunda máquina El comando que ha usado Las carpetas donde ha pivotado  Empezamos analizado las conversaciones Las conversaciones son los paquetes que tienen 2 hosts o más que se transmiten información en wireshark podemos ver una tabla de estas, para ello pulsaremos el botón superior: Statistics &amp;gt; Conversations:</description>
+    </item>
+    
   </channel>
 </rss>

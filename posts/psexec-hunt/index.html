@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>PsExec / CyberDefender</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, TLS'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/posts/psexec-hunt/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PsExec / CyberDefender">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PsExec / CyberDefender">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/posts/psexec-hunt/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/posts/psexec-hunt/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/posts/psexec-hunt/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>PsExec / CyberDefender</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/wireshark">wireshark</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/tls">TLS</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p>Nos están pidiendo que analicemos un registro de red donde un atacante a logrado registrarse como un usuario y luego pivotar a otro, nos exigen que les mostremos los siguientes datos:</p>
+<ul>
+<li>IP del atacante</li>
+<li>Hostname de la primera máquina</li>
+<li>Username de la primera máquina</li>
+<li>Hostname de la segunda máquina</li>
+<li>El comando que ha usado</li>
+<li>Las carpetas donde ha pivotado</li>
+</ul>
+<h1 id="empezamos-analizado-las-conversaciones">Empezamos analizado las conversaciones</h1>
+<p>Las conversaciones son los paquetes que tienen 2 hosts o más que se transmiten información en wireshark podemos ver una tabla de estas, para ello pulsaremos el botón superior: <strong>Statistics &gt; Conversations</strong>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/wireshark1.png.png?raw=true" alt=""></p>
+<p>Rápidamente podemos fijarnos que en la tabla está la <strong>IP -&gt; 10.0.0.130</strong> que ha interceptado muchos mensajes con varias máquinas, siendo un posible atacante, además de encontrar la primera víctima con más de 35.000 paquetes de red&hellip;</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/2-png.png?raw=true" alt=""></p>
+<h2 id="filtrando-la-conversación">Filtrando la conversación</h2>
+<p>Para filtrar por una conversación tenemos que seleccionar 2 IPs, en este caso:</p>
+<ol>
+<li><strong>10.0.0.133</strong></li>
+<li><strong>10.0.0.130</strong></li>
+</ol>
+<p>Entonces, usaremos el filtro manual de wireshark:</p>
+<pre><code class="language-wireshark" data-lang="wireshark">ip.addr==10.0.0.130 &amp;&amp; ip.addr==10.0.0.133
+</code></pre><h3 id="seguimiento-tcp">Seguimiento TCP</h3>
+<p>Para ello podemos hacer la combinación de teclas: <strong>Ctrl + Alt + Shift + T</strong> o click derecho <strong>Follow &gt; TCP Stream</strong>. Y nos encontraremos con la siguiente página abierta:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/1.png.png?raw=true" alt=""></p>
+<h4 id="primer-hostname">Primer Hostname</h4>
+<p>En la cual encontramos el protocolo <strong>NTLMSSP</strong> que sirve para mudar de hostname, en este caso, al hostname <strong>SALES-PC</strong>, obteniendo así el segundo pedido de la misión:</p>
+<ul>
+<li><strong>Hostname primera víctima -&gt; SALES-PC</strong></li>
+</ul>
+<h4 id="primer-usuario">Primer usuario</h4>
+<p>También en el seguimiento en la segunda ventana podemos identificar el primer directorio (<em>ADMIN$</em>) y el usuario (<em>ssales</em>):</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/3.png.png?raw=true" alt=""></p>
+<ul>
+<li><strong>Primer usuario -&gt; ssales</strong></li>
+<li><strong>Primer directorio -&gt; ADMIN$</strong></li>
+</ul>
+<p>También en el mismo archivo que encontramos el hostname podemos ver un único comando (<strong>PSEXESCV</strong>):</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/4.png.png?raw=true" alt=""></p>
+<ul>
+<li><strong>Comandos ejecutados -&gt; PSEXESVC</strong></li>
+</ul>
+<h2 id="encontrando-ambos-directorios-y-segundo-hostname">Encontrando ambos directorios y segundo hostname</h2>
+<p>Es muy fácil ver los directorios, simplemente viendo los paquetes de red nos lo pone:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/5.png.png?raw=true" alt=""></p>
+<ul>
+<li><strong>Segundo directorio -&gt; IPC$</strong></li>
+</ul>
+<p>Viendo también nos fijamos que ya pivotó a la <strong>IP -&gt; 10.0.0.133</strong>, y nos meteremos en las conversación de estas 2 IPs, y podemos ver el segundo hostname, al igual que <em>SALES-PC</em> esta junto al protocolo <strong>NTLMSSP</strong>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW1hZ2VzMAo=/6.png.png?raw=true" alt=""></p>
+<ul>
+<li><strong>Hostname segunda víctima -&gt; Marketing-PC</strong></li>
+</ul>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/red-miners/">
+            &#8592;
+            Anterior:
+            Red Miners / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/marshal-in-the-middle/">
+            Siguiente:
+            Marshal in the Middle / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#empezamos-analizado-las-conversaciones">Empezamos analizado las conversaciones</a>
+      <ul>
+        <li><a href="#filtrando-la-conversación">Filtrando la conversación</a>
+          <ul>
+            <li><a href="#seguimiento-tcp">Seguimiento TCP</a>
+              <ul>
+                <li><a href="#primer-hostname">Primer Hostname</a></li>
+                <li><a href="#primer-usuario">Primer usuario</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#encontrando-ambos-directorios-y-segundo-hostname">Encontrando ambos directorios y segundo hostname</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>
