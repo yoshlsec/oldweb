@@ -120,7 +120,7 @@ file * | grep -v &amp;#34;empty&amp;#34; Transfiriendo: evtx &amp;gt; xml Una ve
     <item>
       <title>Chase / HTB Forensics</title>
       <link>https://llo0zy.github.io/posts/chase/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Oct 2023 15:51:15 +0100</pubDate>
       
       <guid>https://llo0zy.github.io/posts/chase/</guid>
       <description>Misión One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&amp;rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?

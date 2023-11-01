@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 16 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-16/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 16 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 16 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-16/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-16/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-16/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 16 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>The credentials for the next level can be retrieved by submitting the password of the current level to <strong>a port on localhost in the range 31000 to 32000</strong>. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.</em></p>
+<h1 id="resolución">Resolución</h1>
+<p>Muy parecido al ejercicio anterior.</p>
+<h2 id="encontrar-puerto-en-localhost--primer-paso">Encontrar puerto en localhost / Primer paso</h2>
+<p><strong>Nmap</strong> es una herramienta especializada en scaneos de puertos y de sus versiones, esta es una manera sencilla de usaro.</p>
+<ul>
+<li><em>-p31000-32000</em> -&gt; Que solo scanee los puertos entre 31.000 y 32.000</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ nmap -p31000-32000 localhost
+Starting Nmap 7.80 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2023-09-10 14:45 UTC
+Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span>
+Host is up <span style="color:#f92672">(</span>0.00010s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">996</span> closed ports
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown
+31960/tcp open  unknown
+
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 0.06 seconds
+</code></pre></div><h2 id="recibiendo-la-contraseña--segundo-paso">Recibiendo la contraseña / Segundo paso</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ openssl s_client --connect localhost:31790
+...
+
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY<span style="color:#f92672">=</span>
+-----END RSA PRIVATE KEY-----
+
+closed
+</code></pre></div><h2 id="preparando-entorno--tercer-paso">Preparando entorno / Tercer paso</h2>
+<p>Una vez que tenemos la <strong>private key</strong>, podemos acceder a <strong>bandit 17</strong>:</p>
+<ul>
+<li><strong>!$</strong> -&gt; En este caso es lo mismo que poner <strong>/tmp/createkey</strong>, nos referimos al último directorio/archivo mencionado</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ mkdir /tmp/createkey
+bandit16@bandit:~$ cd !$
+cd /tmp/createkey
+</code></pre></div><p>Ahora con <strong>nano id_rsa</strong> (un editor de texto) meteremos la key que nos devolvió el servidor, se almacenara en el archivo <strong>id_rsa</strong> (lo crea automaticamente):</p>
+<ul>
+<li><em>Ctrl + X</em> -&gt; Para guardar los cambios en nano</li>
+</ul>
+<h2 id="damos-permisos-de-ejecución--cuarto-paso">Damos permisos de ejecución / Cuarto paso</h2>
+<p>Ahora daremos permisos de ejecución a nuestra llave privada, para hacerlo usamos el comando: <strong>chmod</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:/tmp/createkey$ chmod <span style="color:#ae81ff">600</span> id_rsa 
+
+bandit16@bandit:/tmp/createkey$ ls -l id_rsa 
+-rw------- <span style="color:#ae81ff">1</span> bandit16 bandit16 <span style="color:#ae81ff">1675</span> Sep <span style="color:#ae81ff">10</span> 15:00 id_rsa
+</code></pre></div><p>En este caso usamos <strong>chmod 600</strong>, es para indicar que el creador del archivo tenga permisos de lectura y escritura (<em>rw-</em>). Para calcular esto hay que saber octal, aquí un pequeño  esquema de como calcularlo:</p>
+<ul>
+<li>r = 4</li>
+<li>w = 2</li>
+<li>x = 1</li>
+</ul>
+<p>También hay que saber que los permisos van por 3 campos:</p>
+<ul>
+<li>
+<p><em>Algunas veces, si es un directorio, tendrá 10 espacios, el primero con una <strong>d</strong> para indicarlo</em></p>
+</li>
+<li>
+<p>Los primeros 3 espacios son para el creador</p>
+</li>
+<li>
+<p>Los siguientes 3 para el grupo del creador</p>
+</li>
+<li>
+<p>Los últimos 3 para otros usuarios, generalmente invitados</p>
+</li>
+</ul>
+<p>Si queremos que un archivo tenga permisos de ejecución y lectura para todos los usuarios, y que el creador sea el único que pueda modificarlo usamos el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#ae81ff">755</span> archivo
+</code></pre></div><p>También podríamos hacerlo de la siguiente manera, pero es menos optimo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod rwxr-xr-x archivo
+</code></pre></div><h2 id="nos-registramos-ya-con-la-llave-creada--último-paso">Nos registramos ya con la llave creada / Último paso</h2>
+<p>Exactamente como el registro de <strong>bandit 14</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:/tmp/createkey$ ssh bandit17@localhost -p2220 -i id_rsa 
+...
+bandit17@bandit:~$ whoami
+bandit17
+</code></pre></div><p>Aquí os dejo la contraseña por si acaso:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
+VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e
+</code></pre></div>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-17/">
+            &#8592;
+            Anterior:
+            Bandit 17 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-15/">
+            Siguiente:
+            Bandit 15 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#encontrar-puerto-en-localhost--primer-paso">Encontrar puerto en localhost / Primer paso</a></li>
+        <li><a href="#recibiendo-la-contraseña--segundo-paso">Recibiendo la contraseña / Segundo paso</a></li>
+        <li><a href="#preparando-entorno--tercer-paso">Preparando entorno / Tercer paso</a></li>
+        <li><a href="#damos-permisos-de-ejecución--cuarto-paso">Damos permisos de ejecución / Cuarto paso</a></li>
+        <li><a href="#nos-registramos-ya-con-la-llave-creada--último-paso">Nos registramos ya con la llave creada / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

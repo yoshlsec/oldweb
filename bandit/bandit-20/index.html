@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 20 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-20/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 20 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 20 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-20/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-20/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-20/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 20 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>*There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).</p>
+<p><strong>NOTE:</strong> Try connecting to your own network daemon to see if it works as you think*</p>
+<h1 id="resolución">Resolución</h1>
+<p>En <strong>/home/bandit20</strong> tenemos un archivo <strong>SUID</strong> que al ejecutarlo y mandar una la contraseña del usuario <strong>bandit20</strong>, nos devolverá la siguiente contraseña para el usuario <strong>bandit21</strong>. Suena complicado pero vas a ver que en verdad es facilísimo. Ahora sí, empecemos.</p>
+<p>Lo único complicado de este nivel es que necesitamos tener <strong>2 consolas</strong> abiertas en el <strong>bandit20</strong>:</p>
+<ul>
+<li>Una de ellas tiene que estar escuchando por un puerto que tu elijas, en mi caso el <strong>puerto 9991</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ nc -lnvp <span style="color:#ae81ff">9991</span>
+</code></pre></div><ul>
+<li>La segunda tiene que ejecutar el archivo junto al <strong>puerto 9991</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ ./suconnect <span style="color:#ae81ff">9991</span>
+</code></pre></div><p>Una vez que ejecutamos ambos comando en la <strong>primera consola</strong>, ya que esta usando el comando: <strong>nc</strong> pondremos la contraseña del <strong>bandit20</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ nc -lnvp <span style="color:#ae81ff">9991</span>
+Listening on 0.0.0.0 <span style="color:#ae81ff">9991</span>
+Connection received on 127.0.0.1 <span style="color:#ae81ff">49598</span>
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+</code></pre></div><p>Ahí tendremos la contraseña del <strong>bandit 21</strong> : <strong>NvEJF7oVjkddltPSrdKEFOllh9V1IBcq</strong>-
+Mientras tanto en la otra consola, la quie usaba <strong>el archivo SUID</strong> nos saldrá el siguiente mensaje:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ ./suconnect <span style="color:#ae81ff">9991</span>
+Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+Password matches, sending next password
+</code></pre></div>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-21/">
+            &#8592;
+            Anterior:
+            Bandit 21 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-19/">
+            Siguiente:
+            Bandit 19 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

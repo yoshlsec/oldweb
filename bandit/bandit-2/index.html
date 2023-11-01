@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 02 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-2/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 02 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 02 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-2/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-2/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-2/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 02 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>The password for the next level is stored in a file called <strong>spaces in this filename</strong> located in the home directory</em></p>
+<h1 id="resolución">Resolución</h1>
+<h2 id="leyendo-la-flag--único-paso">Leyendo la flag / Único paso</h2>
+<p>En este nivel, nos están diciendo que la contraseña para el siguiente nivel esta almacenada en el archivo: <strong>spaces in this filename</strong>. Y podemos hacer un <strong>ls</strong> (esto siempre lo tenemos que hacer nada más empezar) y nos fijamos que si que esta el archivo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit2@bandit:~$ ls
+spaces in this filename
+</code></pre></div><p>Si intentamos hacer un: <strong>cat spaces in the filename</strong> nos saldra el siguiente error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit2@bandit:~$ cat spaces in the filename
+cat: spaces: No such file or directory
+cat: in: No such file or directory
+cat: the: No such file or directory
+cat: filename: No such file or directory
+</code></pre></div><p>Para evitar esto podemos resolverlo de varias maneras</p>
+<h3 id="1">1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit2@bandit:~$ cat spaces<span style="color:#ae81ff">\ </span>in<span style="color:#ae81ff">\ </span>this<span style="color:#ae81ff">\ </span>filename 
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+</code></pre></div><p>El símbolo <strong><code>\</code></strong>  es muy especial, ya que incluye a los espacios dentro de la cadena (si no lo hace tomara como distintos archivos: <em>spaces</em> , <em>in</em>&hellip;). Como es muy lento escribir el símbolo <strong><code>\</code></strong> podemos <em>tabular</em> después de poner la <strong>s</strong>. Al pulsar el <em>tabulador</em> (Tecla que está en la izquierda de la <em>Q</em>) nos auto-completará el nombre del archivo.</p>
+<h3 id="2">2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit2@bandit:~$ cat *
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+</code></pre></div><p>El <strong>*</strong>  también es un símbolo muy especial, ya que equivale a <em>todo</em>, es decir, si hubiera más archivos en el directorio también los habría leído.</p>
+<h3 id="3">3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit2@bandit:~$ cat <span style="color:#e6db74">&#34;spaces in this filename&#34;</span>
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+</code></pre></div><p>Otra manera es meter el nombre entre comillas (<strong>&quot;</strong>).</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-3/">
+            &#8592;
+            Anterior:
+            Bandit 03 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-1/">
+            Siguiente:
+            Bandit 01 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#leyendo-la-flag--único-paso">Leyendo la flag / Único paso</a>
+          <ul>
+            <li><a href="#1">1</a></li>
+            <li><a href="#2">2</a></li>
+            <li><a href="#3">3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

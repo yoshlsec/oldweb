@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 0 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-0/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 0 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 0 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-0/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-0/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-0/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 0 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.</em></p>
+<h1 id="resolución">Resolución</h1>
+<h2 id="primer-paso--loggearse">Primer paso / Loggearse</h2>
+<h3 id="1">1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh bandit0@bandit.labs.overthewire.org -p2220
+
+bandit0@bandit.labs.overthewire.org<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: bandit0
+</code></pre></div><p>Aquí usamos el comando <strong>ssh</strong> para conectarnos al servidor <strong>bandit.labs.overthewire.org</strong> (<em>detras del @</em>) como el usuario <strong>bandit0</strong> (<em>antes del @</em>) a través del puerto <strong>2220</strong> (parámetro <em>-p</em>). Para que luego nos pregunte la contraseña</p>
+<h3 id="2">2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshpass -p <span style="color:#e6db74">&#39;bandit0&#39;</span> ssh -p <span style="color:#ae81ff">2220</span> bandit0@bandit.labs.overthewire.org
+</code></pre></div><p>Otra manera de hacerlo en con <strong>sshpass</strong> donde ponemos con el parametro <em>-p</em> la contraseña <strong>bandit0</strong>, y concadenamos el <em>sshpass</em> con el comando <strong>ssh</strong> similar al anterior.</p>
+<h3 id="3">3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -p <span style="color:#ae81ff">2220</span> bandit.labs.overthewire.org -l bandit0
+
+bandit0@bandit.labs.overthewire.org<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: bandit0
+</code></pre></div><p>La última opción y la más recomendable, es no usando el <strong>@</strong> como separador entre el <strong>servidor</strong> y el <strong>usuario</strong>, para esto usaremos el parámetro <strong>-l</strong> continuado del nombre de usuario.</p>
+<h2 id="tratamiento-de-la-kitty--segundo-paso">Tratamiento de la kitty / Segundo paso</h2>
+<p>Lo conocido como: <strong>tratamiento de la kitty</strong> no es más de tener la consola funcional pudiendo hacer un <strong>Ctrl + L</strong> para limpiar la consola, como un <strong>Ctrl + C</strong> sin que se nos salga de la sesión de la consola.</p>
+<p>Para hacer esto tocamos las variables de sesión (<strong>env</strong>), con el siguiente comando podemos tener un <strong>xterm</strong> que nos deja esa libertad de lo comentado anteriormente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export TERM<span style="color:#f92672">=</span>xterm
+</code></pre></div><h2 id="leyendo-la-flag--último-paso">Leyendo la flag / Último paso</h2>
+<p>Ya que tenemos el <em>tratamiento de la kitty</em> (también conocido como terminal), podemos hacer un <strong>ls</strong> para listar los ficheros de un directorio y un <strong>cat</strong> para leer los documentos. Ya con la flag podemos loggearnos como <strong>bandit1</strong> como contraseña <strong>NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit0@bandit:~$ ls
+readme
+
+bandit0@bandit:~$ cat readme 
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+</code></pre></div><p>Esto lo repetiremos en los próximos 33 niveles, así que, ahora si. ¡Empecemos!</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-1/">
+            &#8592;
+            Anterior:
+            Bandit 01 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#primer-paso--loggearse">Primer paso / Loggearse</a>
+          <ul>
+            <li><a href="#1">1</a></li>
+            <li><a href="#2">2</a></li>
+            <li><a href="#3">3</a></li>
+          </ul>
+        </li>
+        <li><a href="#tratamiento-de-la-kitty--segundo-paso">Tratamiento de la kitty / Segundo paso</a></li>
+        <li><a href="#leyendo-la-flag--último-paso">Leyendo la flag / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

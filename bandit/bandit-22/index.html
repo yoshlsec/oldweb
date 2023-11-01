@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 22 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-22/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 22 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 22 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-22/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-22/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-22/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 22 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>*A program is running automatically at regular intervals from <strong>cron</strong>, the time-based job scheduler. Look in <strong>/etc/cron.d/</strong> for the configuration and see what command is being executed.</p>
+<p><strong>NOTE:</strong> Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.*</p>
+<h1 id="resolución">Resolución</h1>
+<h2 id="leyendo-cronjob-y-ejecutable--primer-paso">Leyendo cronjob y ejecutable / Primer paso</h2>
+<p>Esto es exactamente el mismo procedimiendo del nivel anterior, así y siempre será este proceso:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:/etc/cron.d$ cat cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &amp;&gt; /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &amp;&gt; /dev/null
+* 
+bandit22@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit23.sh
+<span style="color:#75715e">#!/bin/bash</span>
+
+myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
+mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
+
+echo <span style="color:#e6db74">&#34;Copying passwordfile /etc/bandit_pass/</span>$myname<span style="color:#e6db74"> to /tmp/</span>$mytarget<span style="color:#e6db74">&#34;</span>
+
+cat /etc/bandit_pass/$myname &gt; /tmp/$mytarget
+</code></pre></div><p>Podemos ver que usa nuevos comandos como: <strong>md5sum</strong> y un poco de <strong>scripting en bash</strong>, pero en el siguiente nivel te explicaré todo a fondo y con ejemplos</p>
+<h2 id="comando-md5sum-y-scripting-en-bash--segundo-paso">Comando md5sum y scripting en bash / Segundo paso</h2>
+<h3 id="md5sum">md5sum</h3>
+<p>Para continuar con este nivel tenemos que saber la función del comando <strong>md5sum</strong>, el comando se basa en crear un <strong>ID</strong> único para una cadena de texto/archivo, se suele usar en la transferencía de archivos entre ordenadores para comprobar que no se ha modificado el contenido de este.</p>
+<p>Aquí un ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:/etc/cron.d$ echo <span style="color:#e6db74">&#34;Cadena unica&#34;</span> | md5sum
+6d4aad297e53221f5d55e59ddb4bab25  -
+
+bandit22@bandit:/etc/cron.d$ echo <span style="color:#e6db74">&#34;Cadena diferente&#34;</span> | md5sum
+951763e9692291192ecf74fc216942c7  -
+
+bandit22@bandit:/etc/cron.d$ echo <span style="color:#e6db74">&#34;Cadena unica&#34;</span> | md5sum
+6d4aad297e53221f5d55e59ddb4bab25  -
+</code></pre></div><p>Como podemos ver, las lineas con <strong>Cadena unica</strong> tienen el mismo <em>hash</em> <strong>/</strong> <em>identificador</em>, pero en cambio, la linea con <strong>Cadena diferente</strong> tiene un <em>hash</em> completamente distinto, de esta manera podemos identificar que el contenido es el mismo y no uno diferente.</p>
+<h3 id="scripting-en-bash">Scripting en bash</h3>
+<p>No vamos a profundizar mucho en este tema pero lo básico es que la siguiente linea sirve para almacenar el resultado (output) en una varaible:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
+</code></pre></div><p>Ahora al hacer un: <strong>echo $myname</strong> (el $ se usa para llamar a una variable), nos saldrá el mismo resultado que <strong>whoami</strong>, esto es lo mismo para un comando simple como uno más complejo.</p>
+<h2 id="obteniendo-el-nombre-del-archivo--último-paso">Obteniendo el nombre del archivo / Último paso</h2>
+<p>Si nos fijamos en el código anterior veremos estas 2 lineas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
+...
+cat /etc/bandit_pass/$myname &gt; /tmp/$mytarget
+</code></pre></div><p>Básicamente esta almacenando la <em>contraseña</em> de <strong>bandit 23</strong> (si nos fijamos es el creador del archivo, entonces lo ejecuta él), y lo mete en un archivo en <strong>/tmp</strong> con el hash de la siguiente cadena de texto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">I am user $myname
+</code></pre></div><p>Sabiendo que el que ejecuta el archivo es <strong>bandit 23</strong> deducimos que la variable <strong>$myname</strong> sera equivalente a <strong>bandit23</strong>, y para obtener el nombre del archivo abra que suplantar su identidad de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:/etc/cron.d$ echo <span style="color:#e6db74">&#34;I am user bandit23&#34;</span> | md5sum
+8ca319486bfbbc3663ea0fbe81326349  -
+</code></pre></div><p>Ahí tenemos el <em>hash</em> que ejecuta el archivo: <strong>/usr/bin/cronjob_bandit23.sh</strong>, ya que el usuario es <strong>bandit23</strong>. Ahora podemos leer la contraseña que esta almacenada en el archivo: <strong>/tmp/8ca319486bfbbc3663ea0fbe81326349</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+</code></pre></div>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-23/">
+            &#8592;
+            Anterior:
+            Bandit 23 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-21/">
+            Siguiente:
+            Bandit 21 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#leyendo-cronjob-y-ejecutable--primer-paso">Leyendo cronjob y ejecutable / Primer paso</a></li>
+        <li><a href="#comando-md5sum-y-scripting-en-bash--segundo-paso">Comando md5sum y scripting en bash / Segundo paso</a>
+          <ul>
+            <li><a href="#md5sum">md5sum</a></li>
+            <li><a href="#scripting-en-bash">Scripting en bash</a></li>
+          </ul>
+        </li>
+        <li><a href="#obteniendo-el-nombre-del-archivo--último-paso">Obteniendo el nombre del archivo / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

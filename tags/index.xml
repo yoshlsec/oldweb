@@ -62,6 +62,24 @@
     </item>
     
     <item>
+      <title>htb</title>
+      <link>https://llo0zy.github.io/tags/htb/</link>
+      <pubDate>Tue, 31 Oct 2023 16:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/htb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bandit</title>
+      <link>https://llo0zy.github.io/tags/bandit/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/bandit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>bash</title>
       <link>https://llo0zy.github.io/tags/bash/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
@@ -71,11 +89,38 @@
     </item>
     
     <item>
+      <title>cat</title>
+      <link>https://llo0zy.github.io/tags/cat/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/cat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>easy</title>
+      <link>https://llo0zy.github.io/tags/easy/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/easy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>git</title>
       <link>https://llo0zy.github.io/tags/git/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
       <guid>https://llo0zy.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://llo0zy.github.io/tags/linux/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -94,6 +139,24 @@
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
       <guid>https://llo0zy.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://llo0zy.github.io/tags/ssh/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sshpass</title>
+      <link>https://llo0zy.github.io/tags/sshpass/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/tags/sshpass/</guid>
       <description></description>
     </item>
     
@@ -163,7 +226,7 @@
     <item>
       <title>networking</title>
       <link>https://llo0zy.github.io/tags/networking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Oct 2023 15:51:15 +0100</pubDate>
       
       <guid>https://llo0zy.github.io/tags/networking/</guid>
       <description></description>

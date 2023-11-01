@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 09 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-9/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 09 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 09 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-9/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-9/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-9/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 09 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>The password for the next level is stored in the file <strong>data.txt</strong> in one of the few human-readable strings, preceded by several ‘=’ characters.</em></p>
+<h1 id="resolución">Resolución</h1>
+<p>Tenemos que encontrar entre las letras legibles del archivo <strong>data.txt</strong> la contraseña que esta junto a varios iguales <strong>=</strong>:</p>
+<h2 id="mostrando-las-letras-legibles-del-archivo--primer-paso">Mostrando las letras legibles del archivo / Primer paso</h2>
+<p>Este aparatado es muy sencillo con el comando <strong>strings</strong> como el nombre indica, solo nos mostrará las cadenas de texto legibles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt 
+B4Qle
+x&lt;9s
+f<span style="color:#e6db74">`</span>	W0
+?<span style="color:#e6db74">`</span>YOd45
+...
+</code></pre></div><h2 id="filtrando-por-los---último-paso">Filtrando por los = / Último paso</h2>
+<p>Con la herramienta que ya sabemos usar (<strong>grep</strong>) filtramos las lineas que tengan varios iguales, en este caso filtraremos primero por 3 <strong>=</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;===&#34;</span>
+4<span style="color:#f92672">==========</span> the#
+<span style="color:#f92672">==========</span> password
+<span style="color:#f92672">==========</span> is
+<span style="color:#f92672">==========</span> G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+</code></pre></div><h3 id="manipulación-del-output--paso-opcional">Manipulación del output / Paso opcional</h3>
+<p>Una vez que tenemos la contraseña en el output la podemos filtrar mejor para que solo nos muestre esta, para eso podemos usar muchas variantes&hellip;</p>
+<h4 id="1">1</h4>
+<p>En este caso usaremos los comandos <strong>tail</strong> y <strong>awk</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;===&#34;</span> | tail -n1 | awk -F<span style="color:#e6db74">&#39;=&#39;</span> <span style="color:#e6db74">&#39;NF{print $NF}&#39;</span>
+ G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+</code></pre></div><ul>
+<li><strong>tail -n1</strong> -&gt; Nos muestra la última linea del archivo, si no hubieramos puesto <strong>-n1</strong> nos hubiera mostrado las 10 últimas. También quiero mencionar el comando:
+<ul>
+<li><em>head</em> -&gt; Justo lo contrario que <strong>tail</strong> pero para que nos muestre las primeras lineas de archivo.</li>
+</ul>
+</li>
+<li><strong>awk</strong> -&gt; Ya lo hemos explicado en capítulos anteriores, si tienes alguna duda para y consultalo.</li>
+</ul>
+<h4 id="2">2</h4>
+<p>Ahora usaremos <strong>tail</strong> y <strong>cut</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;===&#34;</span> | tail -n1 | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f2
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+</code></pre></div><ul>
+<li><strong>cut -d ' ' -f2</strong> -&gt; Es un comando nuevo y que puede dar un poco de miedo pero lo vamos a descomponer para entenderlo más fácil:
+<ul>
+<li><strong>-d ' &lsquo;</strong> -&gt; <em>-d</em> significa <em>delimiter</em> especificando que queremos que separe la salida (<em>output</em>) mediante los espacios (<strong>Ojo, solo puede ser un carácter</strong>)</li>
+<li><strong>-f2</strong> -&gt; Una vez definido el limite entre cadenas de texto, queremos que nos enseñe la segunda cadena, en este caso la contraseña.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3">3</h4>
+<p>Comandos: <strong>tail</strong> y <strong>tr</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;===&#34;</span> | tail -n1 | tr <span style="color:#e6db74">&#39;=&#39;</span> <span style="color:#e6db74">&#39; &#39;</span>
+           G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+</code></pre></div><p>Este no es tan optimo porque al final nos sigue mostrando esos espacios molestos, pero esta bien saber como funciona <strong>tr</strong>:</p>
+<ul>
+<li><strong>'='</strong> -&gt; Queremos sustituir los iguales (<strong>viejos</strong>)</li>
+<li><strong>&rsquo; &lsquo;</strong> -&gt; Por espacios (<strong>nuevos</strong>)</li>
+</ul>
+<h4 id="4">4?</h4>
+<p>Hay muchos más comandos para editar el output, te animo a probarlos: <strong>sed</strong>, <strong>perl</strong>&hellip; ¡Ojo no son necesarios!</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-10/">
+            &#8592;
+            Anterior:
+            Bandit 10 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-8/">
+            Siguiente:
+            Bandit 08 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#mostrando-las-letras-legibles-del-archivo--primer-paso">Mostrando las letras legibles del archivo / Primer paso</a></li>
+        <li><a href="#filtrando-por-los---último-paso">Filtrando por los = / Último paso</a>
+          <ul>
+            <li><a href="#manipulación-del-output--paso-opcional">Manipulación del output / Paso opcional</a>
+              <ul>
+                <li><a href="#1">1</a></li>
+                <li><a href="#2">2</a></li>
+                <li><a href="#3">3</a></li>
+                <li><a href="#4">4?</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

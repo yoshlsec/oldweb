@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 23 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-23/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 23 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 23 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-23/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-23/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-23/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 23 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>*A program is running automatically at regular intervals from <strong>cron</strong>, the time-based job scheduler. Look in <strong>/etc/cron.d/</strong> for the configuration and see what command is being executed.</p>
+<p><strong>NOTE:</strong> This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!</p>
+<p><strong>NOTE 2:</strong> Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…*</p>
+<h1 id="resolución">Resolución</h1>
+<h2 id="leyendo-el-archivo-ejecutable--primer-paso">Leyendo el archivo ejecutable / Primer paso</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit23@bandit:/etc/cron.d$ cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &amp;&gt; /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &amp;&gt; /dev/null
+
+bandit23@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit24.sh
+<span style="color:#75715e">#!/bin/bash</span>
+
+myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
+
+cd /var/spool/$myname/foo <span style="color:#f92672">||</span> exit <span style="color:#ae81ff">1</span>
+echo <span style="color:#e6db74">&#34;Executing and deleting all scripts in /var/spool/</span>$myname<span style="color:#e6db74">/foo:&#34;</span>
+<span style="color:#66d9ef">for</span> i in * .*;
+<span style="color:#66d9ef">do</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.&#34;</span> -a <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;..&#34;</span> <span style="color:#f92672">]</span>;
+    <span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;Handling </span>$i<span style="color:#e6db74">&#34;</span>
+        owner<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>stat --format <span style="color:#e6db74">&#34;%U&#34;</span> ./$i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bandit23&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+            timeout -s <span style="color:#ae81ff">9</span> <span style="color:#ae81ff">60</span> ./$i
+        <span style="color:#66d9ef">fi</span>
+        rm -rf ./$i
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>Leyendo por encima el código podemos ver que cada cierto tiempo elimina todos los archivos del directorio: <strong>/var/spool/bandit24/foo/</strong> pero antes de borrarlos verifica quien es el creador de estos, si es <strong>bandit23</strong> entonces ejecutara el código, de lo contrario solo lo eliminará.</p>
+<h2 id="creando-nuestro-primer-script-en-bash--segundo-paso">Creando nuestro primer script en bash / Segundo paso</h2>
+<p>Una vez sabemos lo que hace el archivo tendremos que crear un archivo que nos muestre la contraseña de <strong>bandit24</strong>, que estaba en <strong>/etc/bandit_pass/bandit24</strong>, ahora si nos dirigimos al directorio y creamos el siguiente archivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch /tmp/bandit24pass
+cat /etc/bandit_pass/bandit24 &gt;&gt; /tmp/bandit24pass
+</code></pre></div><p>Una vez creado este archivo (da igual el nombre), le daremos permisos de ejecución:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x !$
+</code></pre></div><h2 id="leyendo-la-contraseña--último-paso">Leyendo la contraseña / Último paso</h2>
+<p>Esperamos un poco y ya tendríamos un archivo en el directorio <strong>/tmp/</strong> con la contraseña del archivo <strong>/etc/bandit_pass/bandit24</strong>, es decir, del usuario <strong>bandit24</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit23@bandit:/etc/cron.d$ cat /tmp/bandit24pass
+VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+</code></pre></div><p>Y aquí finalizamos el apartado de tareas cron, recuerda que si no has entendido algo, puedes contactarme por WhatsApp.</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-24/">
+            &#8592;
+            Anterior:
+            Bandit 24 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-22/">
+            Siguiente:
+            Bandit 22 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#leyendo-el-archivo-ejecutable--primer-paso">Leyendo el archivo ejecutable / Primer paso</a></li>
+        <li><a href="#creando-nuestro-primer-script-en-bash--segundo-paso">Creando nuestro primer script en bash / Segundo paso</a></li>
+        <li><a href="#leyendo-la-contraseña--último-paso">Leyendo la contraseña / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>easy on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/easy/</link>
+    <description>Recent content in easy on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/easy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit 10 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-10/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-10/</guid>
+      <description>Felicidades!!! Quería felicitarte por completarte los 10 primeros niveles de bandit, es verdad que la dificultad no sube mediante el nivel, pero es verdad que cada vez los comandos que usamos son un poco más complejos.
+Ahora empezaremos por la zona de encriptación, no te asustes suena difícil pero se nos hará fácil, dicho esto comencemos.
+Información The password for the next level is stored in the file data.txt, which contains base64 encoded data</description>
+    </item>
+    
+  </channel>
+</rss>

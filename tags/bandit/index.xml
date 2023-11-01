@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bandit on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/bandit/</link>
+    <description>Recent content in bandit on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/bandit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit 0 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-0/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-0/</guid>
+      <description>Información The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
+Resolución Primer paso / Loggearse 1 ssh bandit0@bandit.labs.overthewire.org -p2220 bandit0@bandit.labs.overthewire.org&amp;#39;s password: bandit0 Aquí usamos el comando ssh para conectarnos al servidor bandit.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 01 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-1/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-1/</guid>
+      <description>Información The password for the next level is stored in a file called - located in the home directory
+Resolución Una vez que ya tenemos dominado todo lo del [Bandit 0] podemos empezar a resolver Bandit 1.
+Leyendo la flag / Único paso Podemos ver que la hacer un ls para listar el contenido que tenemos en nuestro directorio nos encontramos que tenemos el archivo llamado: -.
+bandit1@bandit:~$ ls - Explicación parámetros Si intentamos leerlo con cat - se nos quedara pensando y no nos devolverá ni una miga de pan.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 02 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-2/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-2/</guid>
+      <description>Información The password for the next level is stored in a file called spaces in this filename located in the home directory
+Resolución Leyendo la flag / Único paso En este nivel, nos están diciendo que la contraseña para el siguiente nivel esta almacenada en el archivo: spaces in this filename. Y podemos hacer un ls (esto siempre lo tenemos que hacer nada más empezar) y nos fijamos que si que esta el archivo.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 03 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-3/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-3/</guid>
+      <description>Información The password for the next level is stored in a hidden file in the inhere directory.
+Resolución Cambio de directorio / Primer paso Al hacer ls podemos ver que hay un directorio (lo notamos porque tenia un color diferente a los archivos anteriores), para adentrarnos al directorio podemos hacer un cd (change directory).
+bandit3@bandit:~$ ls inhere bandit3@bandit:~$ cd inhere/ bandit3@bandit:~/inhere$ Como podemos ver ahora nuestro PATH (:~ a cambiado a :~/inhere) indicando que ya estamos dentro del directorio</description>
+    </item>
+    
+    <item>
+      <title>Bandit 04 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-4/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-4/</guid>
+      <description>Información The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+Resolución Ya vamos yendo un poco más rápido, vemos que tenemos 10 archivos y en solo 1 que es legible esta la contraseña, para esto podemos usar varios comandos:
+1 bandit4@bandit:~/inhere$ file ./* ./-file00: data ./-file01: data ./-file02: data ./-file03: data .</description>
+    </item>
+    
+    <item>
+      <title>Bandit 05 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-5/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-5/</guid>
+      <description>Información *The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+human-readable 1033 bytes in size not executable*
+Resolución bandit5@bandit:~/inhere$ find . -readable ! -executable -size 1033c | xargs cat P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU A simple vista el comando es muy largo pero también completo, usamos principalmente el comando find para buscar por las características:
+ -readable -&amp;gt; Que tenga permisos de lectura !</description>
+    </item>
+    
+    <item>
+      <title>Bandit 06 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-6/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-6/</guid>
+      <description>Información *The password for the next level is stored somewhere on the server and has all of the following properties:
+owned by user bandit7 owned by group bandit6 33 bytes in size*
+Resolución Buscando el archivo / Primer paso Como el ejercicio anterior nos piden que busquemos en todo el servidor un archivo que tiene x características. El comando sería el siguiente
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c find: ‘/run/screen/S-bandit19’: Permission denied find: ‘/run/multipath’: Permission denied find: ‘/run/cryptsetup’: Permission denied find: ‘/run/lvm’: Permission denied Evitando errores / Último paso El problema es que al buscar por todo el servidor / necesitamos tener permisos de root porque sino hay algunos directorios (ej: tmp, snap, proc, etc/multipath) que no nos dejan leerlos, para eso usamos la siguiente expresión: 2&amp;gt;/dev/null</description>
+    </item>
+    
+    <item>
+      <title>Bandit 07 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-7/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-7/</guid>
+      <description>Información The password for the next level is stored in the file data.txt next to the word millionth
+Resolución Lo que nos pide el enunciado es buscar la contraseña que esta en la misma linea que la palabra millonth aquí lo podemos hacer de 4 maneras:
+1 bandit7@bandit:~$ cat data.txt | grep &amp;#34;millionth&amp;#34; millionth	TESKZC0XvTetK0S9xNwm25STk5iWrBvP 2 bandit7@bandit:~$ grep &amp;#34;millionth&amp;#34; data.txt millionth	TESKZC0XvTetK0S9xNwm25STk5iWrBvP Manipulación del stdout En estas soluciones usamos la manipulación de contenido para que nos muestre únicamente la contraseña.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 08 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-8/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-8/</guid>
+      <description>Información The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+Resolución En este enunciado nos dice que la contraseña es la única que no se repite (es decir, que aparece solo una vez en todo el archivo)
+bandit8@bandit:~$ sort data.txt | uniq -u EN632PlfYiZbn3PhVK3XOGSlNInNE00t bandit8@bandit:~$ sort data.txt | uniq --unique EN632PlfYiZbn3PhVK3XOGSlNInNE00t  sort -&amp;gt; Sirve para ordenar alfabéticamente el contenido de un archivo uniq -u -&amp;gt; Filtra por las lineas únicas del archivo, utilizamos el sort anterior, porque si la data esta desordenada este no funciona  Aquí lo hacemos de 2 maneras pero en verdad es solo una, el parámetro -u y &amp;ndash;unique, es el mismo, solo que tenemos elección de cual usar&amp;hellip;    </description>
+    </item>
+    
+    <item>
+      <title>Bandit 09 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-9/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-9/</guid>
+      <description>Información The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+Resolución Tenemos que encontrar entre las letras legibles del archivo data.txt la contraseña que esta junto a varios iguales =:
+Mostrando las letras legibles del archivo / Primer paso Este aparatado es muy sencillo con el comando strings como el nombre indica, solo nos mostrará las cadenas de texto legibles.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 10 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-10/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-10/</guid>
+      <description>Felicidades!!! Quería felicitarte por completarte los 10 primeros niveles de bandit, es verdad que la dificultad no sube mediante el nivel, pero es verdad que cada vez los comandos que usamos son un poco más complejos.
+Ahora empezaremos por la zona de encriptación, no te asustes suena difícil pero se nos hará fácil, dicho esto comencemos.
+Información The password for the next level is stored in the file data.txt, which contains base64 encoded data</description>
+    </item>
+    
+    <item>
+      <title>Bandit 11 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-11/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-11/</guid>
+      <description>Información The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+Resolución La contraseña esta dentro del archivo, el único problema es que esta rotado 13 posiciones, también conocido como encriptación de ROT13. (es decir, este nivel trata de descrifrar la contraseña encriptada en ROT13)
+bandit11@bandit:~$ cat data.txt Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi ROT 13 en consola / Único paso bandit11@bandit:~$ cat data.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 12 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-12/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-12/</guid>
+      <description>Información The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+Resolución Antes de empezar el nivel, recomendaría lavarte la cara y que te de un poco el aire, ya que es un ejercicio largo y con muchos comandos nuevos.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 13 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-13/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-13/</guid>
+      <description>Información The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on.
+Resolución Para conectarnos a bandit14 lo tenemos que hacer con su private_key, una vez que estamos registrados como bandit14 podemos ver la contraseña en /etc/bandit_pass/bandit14.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 14 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-14/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-14/</guid>
+      <description>Información The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+Resolución Nos piden que si introducimos la contraseña de bandit 14 en el puerto 30000 de localhost, nos devolverá la contraseña de bandit 15. Para esto usaremos el comando: nc, ncat o netcat, siendo los 3 el mismo pero con distintos nombres.
+ localhost -&amp;gt; servidor 30000 -&amp;gt; puerto  bandit14@bandit:~$ nc localhost 30000 fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq Correct!</description>
+    </item>
+    
+    <item>
+      <title>Bandit 15 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-15/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-15/</guid>
+      <description>Información *The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…*
+Resolución Este nivel es exactamente igual que el anterior, cambiando el método de conexión, en este caso usamos una encriptación ssl.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 16 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-16/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-16/</guid>
+      <description>Información The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 17 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-17/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-17/</guid>
+      <description>Información *There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19*
+Resolución Nos esta diciendo que la contraseña esta almacenada en passwords.new y es la única diferente de password.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 18 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-18/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-18/</guid>
+      <description>Información The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+Resolución Es muy sencillo este nivel, simplemente tenemos que poner el comando que queremos ejecutar al entrar en la shell, en este caso: cat readme.
+ssh -p 2220 bandit.labs.overthewire.org -l bandit18 cat readme _ _ _ _ | |__ __ _ _ __ __| (_) |_ | &amp;#39;_ \ / _` | &amp;#39;_ \ / _` | | __| | |_) | (_| | | | | (_| | | |_ |_.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 19 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-19/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-19/</guid>
+      <description>Información To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+Resolución Un archivo con permiso SUID significa que podemos ejecutar este archivo como si fuéramos el creador de este, para saber si tiene permiso suid podemos hacer un ls -l para ver los permisos y fijarnos si en vez de una x tiene una s:</description>
+    </item>
+    
+    <item>
+      <title>Bandit 20 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-20/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-20/</guid>
+      <description>Información *There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+NOTE: Try connecting to your own network daemon to see if it works as you think*</description>
+    </item>
+    
+    <item>
+      <title>Bandit 21 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-21/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-21/</guid>
+      <description>Información A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+Resolución Para los próximos 3 niveles, hay que saber que es una tarea cron resumidamente es un archivo, generalmente en bash, que se ejecuta cada cierto tiempo siendo minutos, horas, días, semanas, meses y años. Por lo general la explotación de tareas cron se basa en leer el código de este y saber que hace para aprovecharte de ese vacio legal, una vez sabiendo que es una tarea cron, empezemos.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 22 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-22/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-22/</guid>
+      <description>Información *A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 23 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-23/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-23/</guid>
+      <description>Información *A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…*</description>
+    </item>
+    
+    <item>
+      <title>Bandit 24 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-24/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-24/</guid>
+      <description>Información A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+You do not need to create new connections each time
+Resolución En este ejercicio vamos avanzando el nivel de scripting, haciendo un brute force de un pin de 4 dígitos junto a la contraseña de bandit 24, y mandar por el puerto 30002 del localhost:</description>
+    </item>
+    
+    <item>
+      <title>Bandit 25 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-25/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-25/</guid>
+      <description>Información Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+Resolución Este nivel se parece mucho al nivel de [[Bandit 13]] conectandose mediante una ssh private key, pero el problema que tenemos ahora es que no podemos registrarnos porque no tiene la variable shell activada, entonces no podemos ni inyectar código como en el nivel de [[Bandit 18]], entonces tenemos que usar el visualizador de archivos: more.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 26 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-26/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-26/</guid>
+      <description>Información Good job getting a shell! Now hurry and grab the password for bandit27!
+Resolución Esto es exactamente igual que el nivel de Bandit 19:
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27 YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS </description>
+    </item>
+    
+    <item>
+      <title>Bandit 27 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-27/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-27/</guid>
+      <description>Información There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+Clone the repository and find the password for the next level.
+Resolución Ya dejamos todos los comandos anteriores y empezamos a dominar git.
+Instalando repositorio / Pimer paso Para instalar un repositorio con git usamos: git clone:
+bandit27@bandit:/tmp/a$ git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo Cloning into &amp;#39;repo&amp;#39;... The authenticity of host &amp;#39;[localhost]:2220 ([127.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 28 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-28/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-28/</guid>
+      <description>Información *There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.
+Clone the repository and find the password for the next level.*
+Resolución En los próximos niveles de bandit haremos siempre lo mismo entonces vamos a simplificar estos pasos:
+bandit28@bandit:/tmp/b$ git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo Cloning into &amp;#39;repo&amp;#39;... The authenticity of host &amp;#39;[localhost]:2220 ([127.0.0.1]:2220)&amp;#39; can&amp;#39;t be established. ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 29 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-29/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-29/</guid>
+      <description>Información *There is a git repository at ssh://bandit28-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso Siempre es esencial leer toda la información disponible de una máquina:
+bandit29@bandit:/tmp/c/repo$ cat README.md # Bandit Notes Some notes for bandit30 of bandit. ## credentials - username: bandit30 - password: &amp;lt;no passwords in production!</description>
+    </item>
+    
+    <item>
+      <title>Bandit 30 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-30/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-30/</guid>
+      <description>Información *There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso bandit30@bandit:/tmp/d/repo$ cat README.md just an epmty file... muahaha Listando y leyendo tags / Último paso Una vez que hemos probado todo lo estudiado, seguimos leyendo el manual de git (git &amp;ndash;help)</description>
+    </item>
+    
+    <item>
+      <title>Bandit 31 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-31/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-31/</guid>
+      <description>Información *There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso bandit31@bandit:/tmp/f/repo$ cat README.md This time your task is to push a file to the remote repository. Details: File name: key.txt Content: &amp;#39;May I come in?&amp;#39; Branch: master Subiendo un archivo / Segundo paso  touch -&amp;gt; Crear archivo git add -&amp;gt; Poner el archivo en cola para actualizar  bandit31@bandit:/tmp/f/repo$ touch key.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 32 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-32/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-32/</guid>
+      <description>Información After all this git stuff its time for another escape. Good luck!
+Resolución Obteniendo una bash interactiva / Último paso Podemos ver que tenemos una shell llamda uppercase, investingando por google podemos saber que $0 es el primer argumento en un comando.
+En este caso $0 es una shell, y con ponerlo en la terminal nos dara una consola interactiva:
+WELCOME TO THE UPPERCASE SHELL &amp;gt;&amp;gt; ls sh: 1: LS: Permission denied &amp;gt;&amp;gt; $0 $ whoami bandit33 $ cat /etc/bandit_pass/bandit33 odHo63fHiFqcWWJG9rLiLDtPm45KzUKy Aquí tenemos la última contraseña de bandit</description>
+    </item>
+    
+    <item>
+      <title>Bandit 33 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-33/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-33/</guid>
+      <description>bandit33@bandit:~$ cat README.txt Congratulations on solving the last level of this game! At this moment, there are no more levels to play in this game. However, we are constantly working on new levels and will most likely expand this game with more levels soon. Keep an eye out for an announcement on our usual communication channels! In the meantime, you could play some of our other wargames. If you have an idea for an awesome new level, please let us know!</description>
+    </item>
+    
+  </channel>
+</rss>

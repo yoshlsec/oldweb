@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cat on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/cat/</link>
+    <description>Recent content in cat on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/cat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit 01 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-1/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-1/</guid>
+      <description>Información The password for the next level is stored in a file called - located in the home directory
+Resolución Una vez que ya tenemos dominado todo lo del [Bandit 0] podemos empezar a resolver Bandit 1.
+Leyendo la flag / Único paso Podemos ver que la hacer un ls para listar el contenido que tenemos en nuestro directorio nos encontramos que tenemos el archivo llamado: -.
+bandit1@bandit:~$ ls - Explicación parámetros Si intentamos leerlo con cat - se nos quedara pensando y no nos devolverá ni una miga de pan.</description>
+    </item>
+    
+  </channel>
+</rss>

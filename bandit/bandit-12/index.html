@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 12 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, ssh, sshpass, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-12/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 12 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 12 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-12/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-12/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-12/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 12 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sshpass">sshpass</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p><em>The password for the next level is stored in the file <strong>data.txt</strong>, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)</em></p>
+<h1 id="resolución">Resolución</h1>
+<p>Antes de empezar el nivel, recomendaría lavarte la cara y que te de un poco el aire, ya que es un ejercicio largo y con muchos comandos nuevos. ¡Suerte!</p>
+<h2 id="creando-entorno-de-trabajo">Creando entorno de trabajo</h2>
+<p>Como en este ejercicio necesitamos modificar y crear nuevos archivos tendremos que crearnos un directorio en <strong>/tmp</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:~$ mkdir /tmp/ex12
+bandit12@bandit:~$ cd /tmp/ex12
+
+bandit12@bandit:/tmp/ex12$ cp ~/data.txt ./.
+
+bandit12@bandit:/tmp/ex12$ ls
+data.txt
+</code></pre></div><h3 id="comprimiendo-a-hexadecimal--primer-paso">Comprimiendo a hexadecimal / Primer paso</h3>
+<p>Cuando hacemos un <em>cat data.txt</em> podemos identificar que es <strong>hexadecimal</strong>, una vez con esta información desomprimimos el fichero <em>.txt</em>  que en verdad es  un binario de <em>hexdump</em>, para hacerlo usamos el comando: <strong>xxd -r</strong> y redirigimos el output al nuevo fichero <strong>data</strong>.</p>
+<p>Con el comando <strong>file</strong> vemos que tiene encriptado otro archivo llamado <strong>data2.bin</strong>, como un winrar que tiene un archivo comprimido&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ cat data.txt | xxd -r &gt; data
+
+bandit12@bandit:/tmp/ex12$ file data
+data: gzip compressed data, was <span style="color:#e6db74">&#34;data2.bin&#34;</span>, last modified: Sun Apr <span style="color:#ae81ff">23</span> 18:04:23 2023, max compression, from Unix, original size modulo 2^32 <span style="color:#ae81ff">581</span>
+</code></pre></div><p>Hemos sacado el archivo fuera de la capa de <strong>hexadecimal</strong>, ahora hacemos un <em>file</em> para ver que tipo de archivo es y vemos que esta comprimido con <strong>gzip</strong>, entonces cambiamos la extensión a <strong>.gz</strong> (es decir, el archivo comprimido con <em>gzip</em>).</p>
+<p>Después de hacer un <strong>file</strong> al nuevo data, nos damos cuenta que esta comprimido con <strong>bzip2</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ gzip -d data.gz 
+bandit12@bandit:/tmp/ex12$ file data
+data: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
+</code></pre></div><h3 id="cambiando-extensión-bz2--segundo-paso">Cambiando extensión: bz2 / Segundo paso</h3>
+<p>Ahora tendremos que cambiar la entensión y poner: <strong>bzip2 -d data.bz2</strong>, y así continuamente&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data data.bz2
+bandit12@bandit:/tmp/ex12$ bzip2 -d data.bz2 
+
+bandit12@bandit:/tmp/ex12$ file data
+data: gzip compressed data, was <span style="color:#e6db74">&#34;data4.bin&#34;</span>, last modified: Sun Apr <span style="color:#ae81ff">23</span> 18:04:23 2023, max compression, from Unix, original size modulo 2^32 <span style="color:#ae81ff">20480</span>
+</code></pre></div><h3 id="cambiando-extensión-gz--tercer-paso">Cambiando extensión: gz / Tercer paso</h3>
+<p>Los archivos comprimidos con <strong>gzip</strong> contienen la extensión: <strong>gz</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>gzip -d</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data data.gz
+bandit12@bandit:/tmp/ex12$ gzip -d data.gz 
+
+bandit12@bandit:/tmp/ex12$ file data
+data: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="cambiando-extensión-tar--cuarto-paso">Cambiando extensión: tar / Cuarto paso</h3>
+<p>Los archivos comprimidos con <strong>tar</strong> contienen la extensión: <strong>tar</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>tar xf</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data data.tar
+bandit12@bandit:/tmp/ex12$ tar xf data.tar
+bandit12@bandit:/tmp/ex12$ ls
+data5.bin  data.tar  data.txt
+
+bandit12@bandit:/tmp/ex12$ file data5.bin 
+data5.bin: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="cambiando-extensión-tar--quinto-paso">Cambiando extensión: tar / Quinto paso</h3>
+<p>Los archivos comprimidos con <strong>tar</strong> contienen la extensión: <strong>tar</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>tar xf</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data5.bin data5.tar
+bandit12@bandit:/tmp/ex12$ tar xf data5.tar
+bandit12@bandit:/tmp/ex12$ ls
+data5.bin  data.tar  data.txt
+
+bandit12@bandit:/tmp/ex12$ file data5.bin 
+data5.bin: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="cambiando-extensión-tar--sexto-paso">Cambiando extensión: tar / Sexto paso</h3>
+<p>Los archivos comprimidos con <strong>tar</strong> contienen la extensión: <strong>tar</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>tar xf</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data5.bin data5.tar
+bandit12@bandit:/tmp/ex12$ tar xf data5.tar 
+bandit12@bandit:/tmp/ex12$ ls
+data5.tar  data6.bin  data.tar  data.txt
+
+bandit12@bandit:/tmp/ex12$ file data6.bin 
+data6.bin: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
+</code></pre></div><h3 id="cambiando-extensión-bz2--séptimo-paso">Cambiando extensión: bz2 / Séptimo paso</h3>
+<p>Los archivos comprimidos con <strong>bzip2</strong> contienen la extensión: <strong>bz2</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>bzip2 -d</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data6.bin data6.bz2
+bandit12@bandit:/tmp/ex12$ bzip2 -d data6.bz2 
+
+bandit12@bandit:/tmp/ex12$ file data6
+data6: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="cambiando-extensión-tar--octavo-paso">Cambiando extensión: tar / Octavo paso</h3>
+<p>Los archivos comprimidos con <strong>tar</strong> contienen la extensión: <strong>tar</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>tar xf</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data6 data6.tar
+bandit12@bandit:/tmp/ex12$ tar xf data6.tar 
+bandit12@bandit:/tmp/ex12$ ls
+data5.tar  data6.tar  data8.bin  data.tar  data.txt
+
+bandit12@bandit:/tmp/ex12$ file data8.bin 
+data8.bin: gzip compressed data, was <span style="color:#e6db74">&#34;data9.bin&#34;</span>, last modified: Sun Apr <span style="color:#ae81ff">23</span> 18:04:23 2023, max compression, from Unix, original size modulo 2^32 <span style="color:#ae81ff">49</span>
+</code></pre></div><h3 id="cambiando-extensión-gz--noveno-paso">Cambiando extensión: gz / Noveno paso</h3>
+<p>Los archivos comprimidos con <strong>gzip</strong> contienen la extensión: <strong>gz</strong>.</p>
+<ul>
+<li>Para descomprimirlos usamos el comando: <strong>gzip -d</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ mv data8.bin data8.gz
+bandit12@bandit:/tmp/ex12$ gzip -d data8.gz 
+
+bandit12@bandit:/tmp/ex12$ file data8
+data8: ASCII text
+</code></pre></div><h2 id="leyendo-la-contraseña--último-paso">Leyendo la contraseña / Último paso</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/ex12$ cat data8
+The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+</code></pre></div>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-13/">
+            &#8592;
+            Anterior:
+            Bandit 13 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-11/">
+            Siguiente:
+            Bandit 11 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#creando-entorno-de-trabajo">Creando entorno de trabajo</a>
+          <ul>
+            <li><a href="#comprimiendo-a-hexadecimal--primer-paso">Comprimiendo a hexadecimal / Primer paso</a></li>
+            <li><a href="#cambiando-extensión-bz2--segundo-paso">Cambiando extensión: bz2 / Segundo paso</a></li>
+            <li><a href="#cambiando-extensión-gz--tercer-paso">Cambiando extensión: gz / Tercer paso</a></li>
+            <li><a href="#cambiando-extensión-tar--cuarto-paso">Cambiando extensión: tar / Cuarto paso</a></li>
+            <li><a href="#cambiando-extensión-tar--quinto-paso">Cambiando extensión: tar / Quinto paso</a></li>
+            <li><a href="#cambiando-extensión-tar--sexto-paso">Cambiando extensión: tar / Sexto paso</a></li>
+            <li><a href="#cambiando-extensión-bz2--séptimo-paso">Cambiando extensión: bz2 / Séptimo paso</a></li>
+            <li><a href="#cambiando-extensión-tar--octavo-paso">Cambiando extensión: tar / Octavo paso</a></li>
+            <li><a href="#cambiando-extensión-gz--noveno-paso">Cambiando extensión: gz / Noveno paso</a></li>
+          </ul>
+        </li>
+        <li><a href="#leyendo-la-contraseña--último-paso">Leyendo la contraseña / Último paso</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

@@ -8,6 +8,86 @@
     <language>es</language>
     <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bandit 27 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-27/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-27/</guid>
+      <description>Información There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+Clone the repository and find the password for the next level.
+Resolución Ya dejamos todos los comandos anteriores y empezamos a dominar git.
+Instalando repositorio / Pimer paso Para instalar un repositorio con git usamos: git clone:
+bandit27@bandit:/tmp/a$ git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo Cloning into &amp;#39;repo&amp;#39;... The authenticity of host &amp;#39;[localhost]:2220 ([127.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 28 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-28/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-28/</guid>
+      <description>Información *There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.
+Clone the repository and find the password for the next level.*
+Resolución En los próximos niveles de bandit haremos siempre lo mismo entonces vamos a simplificar estos pasos:
+bandit28@bandit:/tmp/b$ git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo Cloning into &amp;#39;repo&amp;#39;... The authenticity of host &amp;#39;[localhost]:2220 ([127.0.0.1]:2220)&amp;#39; can&amp;#39;t be established. ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 29 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-29/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-29/</guid>
+      <description>Información *There is a git repository at ssh://bandit28-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso Siempre es esencial leer toda la información disponible de una máquina:
+bandit29@bandit:/tmp/c/repo$ cat README.md # Bandit Notes Some notes for bandit30 of bandit. ## credentials - username: bandit30 - password: &amp;lt;no passwords in production!</description>
+    </item>
+    
+    <item>
+      <title>Bandit 30 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-30/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-30/</guid>
+      <description>Información *There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso bandit30@bandit:/tmp/d/repo$ cat README.md just an epmty file... muahaha Listando y leyendo tags / Último paso Una vez que hemos probado todo lo estudiado, seguimos leyendo el manual de git (git &amp;ndash;help)</description>
+    </item>
+    
+    <item>
+      <title>Bandit 31 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-31/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-31/</guid>
+      <description>Información *There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+Clone the repository and find the password for the next level.*
+Resolución Leyendo el README.md / Primer paso bandit31@bandit:/tmp/f/repo$ cat README.md This time your task is to push a file to the remote repository. Details: File name: key.txt Content: &amp;#39;May I come in?&amp;#39; Branch: master Subiendo un archivo / Segundo paso  touch -&amp;gt; Crear archivo git add -&amp;gt; Poner el archivo en cola para actualizar  bandit31@bandit:/tmp/f/repo$ touch key.</description>
+    </item>
+    
+    <item>
+      <title>Bandit 32 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-32/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-32/</guid>
+      <description>Información After all this git stuff its time for another escape. Good luck!
+Resolución Obteniendo una bash interactiva / Último paso Podemos ver que tenemos una shell llamda uppercase, investingando por google podemos saber que $0 es el primer argumento en un comando.
+En este caso $0 es una shell, y con ponerlo en la terminal nos dara una consola interactiva:
+WELCOME TO THE UPPERCASE SHELL &amp;gt;&amp;gt; ls sh: 1: LS: Permission denied &amp;gt;&amp;gt; $0 $ whoami bandit33 $ cat /etc/bandit_pass/bandit33 odHo63fHiFqcWWJG9rLiLDtPm45KzUKy Aquí tenemos la última contraseña de bandit</description>
+    </item>
+    
+    <item>
+      <title>Bandit 33 / Overthewire</title>
+      <link>https://llo0zy.github.io/bandit/bandit-33/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/bandit/bandit-33/</guid>
+      <description>bandit33@bandit:~$ cat README.txt Congratulations on solving the last level of this game! At this moment, there are no more levels to play in this game. However, we are constantly working on new levels and will most likely expand this game with more levels soon. Keep an eye out for an announcement on our usual communication channels! In the meantime, you could play some of our other wargames. If you have an idea for an awesome new level, please let us know!</description>
+    </item>
+    
+    <item>
       <title>Illumination / HTB Forensics</title>
       <link>https://llo0zy.github.io/posts/illumination/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bandit 28 / Overthewire</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, bandit, git, linux, bash'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/bandit/bandit-28/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bandit 28 / Overthewire">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bandit 28 / Overthewire">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/bandit/bandit-28/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/bandit/bandit-28/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/bandit/bandit-28/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/bandit/"> Bandit Overthewire Levels </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bandit 28 / Overthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bandit">bandit</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/git">git</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/linux">linux</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>*There is a git repository at <code>ssh://bandit28-git@localhost/home/bandit28-git/repo</code> via the port <code>2220</code>. The password for the user <code>bandit28-git</code> is the same as for the user <code>bandit28</code>.</p>
+<p>Clone the repository and find the password for the next level.*</p>
+<h1 id="resolución">Resolución</h1>
+<p>En los próximos niveles de bandit haremos siempre lo mismo entonces vamos a simplificar estos pasos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit28@bandit:/tmp/b$ git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+Cloning into <span style="color:#e6db74">&#39;repo&#39;</span>...
+The authenticity of host <span style="color:#e6db74">&#39;[localhost]:2220 ([127.0.0.1]:2220)&#39;</span> can<span style="color:#960050;background-color:#1e0010">&#39;</span>t be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names
+Are you sure you want to <span style="color:#66d9ef">continue</span> connecting <span style="color:#f92672">(</span>yes/no/<span style="color:#f92672">[</span>fingerprint<span style="color:#f92672">])</span>? yes
+...
+Resolving deltas: 100% <span style="color:#f92672">(</span>2/2<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</code></pre></div><h2 id="leyendo-el-archivo-readmemd--primer-pasop">Leyendo el archivo README.md / Primer pasop</h2>
+<p>Al usar <em>git</em> para subir nuevos archivos al <em>repositorio</em> hay que poner un comentario, también conocido como <strong>commits</strong>, para que otros desarrolladores entiendan el código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit28@bandit:/tmp/b/repo$ cat README.md 
+<span style="color:#75715e"># Bandit Notes</span>
+Some notes <span style="color:#66d9ef">for</span> level29 of bandit.
+
+<span style="color:#75715e">## credentials</span>
+
+- username: bandit29
+- password: xxxxxxxxxx
+</code></pre></div><h2 id="listando-logs--segundo-paso">Listando logs / Segundo paso</h2>
+<p>Para leer los logs de un <em>repositorio</em> es muy sencillo e intuitivo, simplemente poniendo el comando: <strong>git log</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit28@bandit:/tmp/b/repo$ git log
+commit 899ba88df296331cc01f30d022c006775d467f28 <span style="color:#f92672">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span style="color:#f92672">)</span>
+Author: Morla Porla &lt;morla@overthewire.org&gt;
+Date:   Sun Apr <span style="color:#ae81ff">23</span> 18:04:39 <span style="color:#ae81ff">2023</span> +0000
+
+    fix info leak
+
+commit abcff758fa6343a0d002a1c0add1ad8c71b88534
+Author: Morla Porla &lt;morla@overthewire.org&gt;
+Date:   Sun Apr <span style="color:#ae81ff">23</span> 18:04:39 <span style="color:#ae81ff">2023</span> +0000
+
+    add missing data
+
+commit c0a8c3cf093fba65f4ee0e1fe2a530b799508c78
+Author: Ben Dover &lt;noone@overthewire.org&gt;
+Date:   Sun Apr <span style="color:#ae81ff">23</span> 18:04:39 <span style="color:#ae81ff">2023</span> +0000
+
+    initial commit of README.md
+</code></pre></div><h3 id="leyendo-los-logs--último-paso">Leyendo los logs / Último paso</h3>
+<p>Una vez que tenemos los <em>identificadores</em> de los <em>logs</em> ya podemos ver más a fondo los detalles y cambios del log con el comando: <strong>git show</strong> seguido del <em>identificador</em> del log:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit28@bandit:/tmp/b/repo$ git show 899ba88df296331cc01f30d022c006775d467f28
+commit 899ba88df296331cc01f30d022c006775d467f28 <span style="color:#f92672">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span style="color:#f92672">)</span>
+Author: Morla Porla &lt;morla@overthewire.org&gt;
+Date:   Sun Apr <span style="color:#ae81ff">23</span> 18:04:39 <span style="color:#ae81ff">2023</span> +0000
+
+    fix info leak
+
+diff --git a/README.md b/README.md
+index b302105..5c6457b <span style="color:#ae81ff">100644</span>
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes <span style="color:#66d9ef">for</span> level29 of bandit.
+ <span style="color:#75715e">## credentials</span>
+ 
+ - username: bandit29
+-- password: tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
++- password: xxxxxxxxxx
+</code></pre></div><p>Aquí vemos que la contraseña era: <strong>tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S</strong></p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/bandit/bandit-29/">
+            &#8592;
+            Anterior:
+            Bandit 29 / Overthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/bandit/bandit-27/">
+            Siguiente:
+            Bandit 27 / Overthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#resolución">Resolución</a>
+      <ul>
+        <li><a href="#leyendo-el-archivo-readmemd--primer-pasop">Leyendo el archivo README.md / Primer pasop</a></li>
+        <li><a href="#listando-logs--segundo-paso">Listando logs / Segundo paso</a>
+          <ul>
+            <li><a href="#leyendo-los-logs--último-paso">Leyendo los logs / Último paso</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>
