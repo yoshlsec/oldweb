@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Market Dump / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, sql'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/posts/market-dump/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Market Dump / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Market Dump / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/posts/market-dump/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/posts/market-dump/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/posts/market-dump/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Market Dump / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/wireshark">wireshark</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/sql">sql</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p>Un hacker se conecto a nuestra página web e hizo una <strong>SQL Injection</strong>, cual fue la victima?</p>
+<h1 id="analizando-paquetes-por-http">Analizando paquetes por HTTP</h1>
+<p>Como el enunciado nos indica el atacante entro a la página web, entonces filtraremos por el protocolo <strong>http</strong></p>
+<pre><code class="language-wireshark" data-lang="wireshark">http
+</code></pre><h2 id="fijandonos-en-un-sql">Fijandonos en un sql</h2>
+<p>Hecho esto, vemos que hay una petición web a un archivo con extensión <strong>.sql</strong>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/TWFya2V0RHVtcAo=/sqlPacket.png.png?raw=true" alt=""></p>
+<h2 id="seguimos-conversación">Seguimos conversación</h2>
+<p>Cuando seguimos su conversación por <em>HTTP</em> nos damos cuenta que tenemos un listado:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/TWFya2V0RHVtcAo=/base64list.png.png?raw=true" alt=""></p>
+<h2 id="obteniendo-la-flag">Obteniendo la flag</h2>
+<p>Cuyo listado contiene un nombre de usuario en <em>Base64</em> -&gt; <strong>NVCijF7n6peM7a7yLYPZrPgHmWUHi97LCAzXxSEUraKme</strong> que en texto claro significa:</p>
+<ul>
+<li>Flag -&gt; <strong>HTB{DonTRuNAsRoOt!MESsEdUpMarket}</strong></li>
+</ul>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/marshal-in-the-middle/">
+            &#8592;
+            Anterior:
+            Marshal in the Middle / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/illumination/">
+            Siguiente:
+            Illumination / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#analizando-paquetes-por-http">Analizando paquetes por HTTP</a>
+      <ul>
+        <li><a href="#fijandonos-en-un-sql">Fijandonos en un sql</a></li>
+        <li><a href="#seguimos-conversación">Seguimos conversación</a></li>
+        <li><a href="#obteniendo-la-flag">Obteniendo la flag</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 Jaime Gómez (Aka. Yoshl)</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

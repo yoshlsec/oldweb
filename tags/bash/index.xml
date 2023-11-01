@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/bash/</link>
+    <description>Recent content in bash on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extraterrestial Persistence / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/extraterrestrial-persistence/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/extraterrestrial-persistence/</guid>
+      <description>Misión There is a rumor that aliens have developed a persistence mechanism that is impossible to detect. After investigating her recently compromised Linux server, Pandora found a possible sample of this mechanism. Can you analyze it and find out how they install their persistence?
+Analizando archivo sh Nos dan un archivo .sh que por su extensión sabemos que esta escrito en bash y lo abrimos:
+n=`whoami` h=`hostname` path=&amp;#39;/usr/local/bin/service&amp;#39; if [[ &amp;#34;$n&amp;#34; !</description>
+    </item>
+    
+    <item>
+      <title>Red Miners / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/red-miners/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/red-miners/</guid>
+      <description>Misión In the race for Vitalium on Mars, the villainous Board of Arodor resorted to desperate measures, needing funds for their mining attempts. They devised a botnet specifically crafted to mine cryptocurrency covertly. We stumbled upon a sample of Arodor&amp;rsquo;s miner&amp;rsquo;s installer on our server. Recognizing the gravity of the situation, we launched a thorough investigation. With you as its leader, you need to unravel the inner workings of the installation mechanism.</description>
+    </item>
+    
+  </channel>
+</rss>

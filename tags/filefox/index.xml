@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>filefox on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/filefox/</link>
+    <description>Recent content in filefox on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 31 Oct 2023 16:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/filefox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Insider / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/indiser/</link>
+      <pubDate>Tue, 31 Oct 2023 16:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/indiser/</guid>
+      <description>Misión Se ha detectado una posible amenaza y nos han manado un archivo de Mo&amp;lt;illa Firefox para informar sobre el tema.
+Requesitos Para este nivel usaremos una herramienta de github que nos viene muy bien para [[dumpear]] archivos de firefox, pero también os dejo un par más para que os acostumbréis a este tipo de datos:
+  https://github.com/unode/firefox_decrypt -&amp;gt; Nos saca las contraseñas de los perfiles
+  https://github.com/numirias/firefed -&amp;gt; Nos saca contraseñas, cookies, registros&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

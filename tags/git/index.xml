@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/git/</link>
+    <description>Recent content in git on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Illumination / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/illumination/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/illumination/</guid>
+      <description>Misión Obtener el token secreto del programador Junior
+Analizando directorio Nada más descomprimido el archivo podemos ver que esta la carpeta .git:
+Listado de logs Haciendo un git log vemos que hay varios cambios:
+![https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/listalogs.png.png?raw=true]
+Fijandonos en los comentarios que dejan los programadores que hicieron cambios vemos que en uno nos menciona acerca de un token&amp;hellip;
+Thanks to contributors, I removed the unique token as it was a security risk. Thanks for reporting responsibly!</description>
+    </item>
+    
+  </channel>
+</rss>

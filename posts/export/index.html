@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Export / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, docker, volatility, cybercheff'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/posts/export/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Export / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Export / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/posts/export/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/posts/export/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/posts/export/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Export / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            octubre 13, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/volatility">volatility</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/cybercheff">cybercheff</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p>Saber quien se conecto al servidor mediante la información de un volcado de memoria en un archivo <em>.raw</em></p>
+<h2 id="docker-preparation">Docker preparation</h2>
+<p>Para esto necesitaremos instalarnos el docker y la siguiente imagen: <a href="https://hub.docker.com/r/blacktop/volatility">https://hub.docker.com/r/blacktop/volatility</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker">docker pull blacktop/volatility<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Una vez con la imagen pondremos un alias para usar el comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias vol<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;docker run -it --rm -v $(pwd):/data:ro blacktop/volatility $@&#39;</span>
+</code></pre></div><h1 id="obteniendo-el-user">Obteniendo el user</h1>
+<p>Teniendo el archivo con extensión <em>.raw</em> vamos a usar el comando <em>vol</em> para obtener un poco más de información acerca de los últimos usuarios que modificaron el archivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vol imageinfo -f ./WIN-LQS146OE2S1-20201027-142607.raw
+</code></pre></div><p><img src="https://github.com/Llo0zy/images-web/blob/main/RXhwb3J0Cg==/imageinfo.png.png?raw=true" alt=""></p>
+<p>Y vemos que el último usuario que modifico el archivo es <em>Win7SP1x64</em> asi que veamos que comandos usó.</p>
+<h2 id="viendo-logs-de-los-comandos">Viendo logs de los comandos</h2>
+<p>Para esto tendremos que especificar el usuario y el pluging:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vol -f ./WIN-LQS146OE2S1-20201027-142607.raw --profile<span style="color:#f92672">=</span>Win7SP1x64 cmdscan
+</code></pre></div><p>Con el pluging <em>cmdscan</em> podemos ver el logs de la <em>cmd</em> también dicha la consola.</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXhwb3J0Cg==/cmdscan.png.png?raw=true" alt=""></p>
+<p>Lo que podemos identificar es la ruta del ejecutable de la powershell (<em>.ps1</em>) que la llevaremos a cyberchef para ver el texto plano.</p>
+<h2 id="cyberchef--obteniendo-la-flag">CyberChef / Obteniendo la flag</h2>
+<p>Podemos ver que es un link acortado que tiene otro texto encriptado</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXhwb3J0Cg==/cybercheff1.png.png?raw=true" alt=""></p>
+<p>Y este texto vemos que tiene la flag, encriptada en <em>Base64</em></p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXhwb3J0Cg==/Pasted%20image%2020231015131211.png?raw=true" alt=""></p>
+<p>Y la flag es: <em>HTB{W1Nd0ws_f0r3Ns1CS_3H?}</em></p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/event-horizon/">
+            &#8592;
+            Anterior:
+            Event Horizon / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 11, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/wrong-spooky-season/">
+            Siguiente:
+            Wrong Spooky Season / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a>
+      <ul>
+        <li><a href="#docker-preparation">Docker preparation</a></li>
+      </ul>
+    </li>
+    <li><a href="#obteniendo-el-user">Obteniendo el user</a>
+      <ul>
+        <li><a href="#viendo-logs-de-los-comandos">Viendo logs de los comandos</a></li>
+        <li><a href="#cyberchef--obteniendo-la-flag">CyberChef / Obteniendo la flag</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 Jaime Gómez (Aka. Yoshl)</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

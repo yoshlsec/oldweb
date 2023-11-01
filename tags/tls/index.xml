@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TLS on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/tls/</link>
+    <description>Recent content in TLS on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Marshal in the Middle / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/marshal-in-the-middle/</link>
+      <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/marshal-in-the-middle/</guid>
+      <description>Misión The security team was alerted to suspicous network activity from a production web server. Can you determine if any data was stolen and what it was?
+Listando archivos En este caso nos traen varios archivos, aquí un listado de ellos:
+ bundle.pem  chalcap.pcapng  secrets.log bro: (Directorio)  conn.log  dns.log  files.log  http.log  packet_filter.log  ssl.log  weird.log Buscando lo que es el archivo secrets.log vemos que es para leer el texto plano de un paquete SSL/TLS, investigando más logramos introducir estos &amp;ldquo;secretos&amp;rdquo; en las preferencias (Edit &amp;gt; Preferences) de nuestro wireshark, para no tener problema alguno:</description>
+    </item>
+    
+  </channel>
+</rss>

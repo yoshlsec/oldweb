@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Illumination / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, git'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/posts/illumination/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Illumination / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://llo0zy.github.io/">
+    <meta property="og:image:secure_url" content="https://llo0zy.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Illumination / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/posts/illumination/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/posts/illumination/">
+    <meta name="twitter:image" content="https://llo0zy.github.io/">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/posts/illumination/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/contact/"> Contact me </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Illumination / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/git">git</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p>Obtener el <em>token</em> secreto del programador Junior</p>
+<h1 id="analizando-directorio">Analizando directorio</h1>
+<p>Nada más descomprimido el archivo podemos ver que esta la carpeta <em>.git</em>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/gitls.png.png?raw=true" alt=""></p>
+<h2 id="listado-de-logs">Listado de logs</h2>
+<p>Haciendo un <em>git log</em> vemos que hay varios cambios:</p>
+<p>![https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/listalogs.png.png?raw=true]</p>
+<p>Fijandonos en los comentarios que dejan los programadores que hicieron cambios vemos que en uno nos menciona acerca de un token&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Thanks to contributors, I removed the unique token as it was a security risk. Thanks <span style="color:#66d9ef">for</span> reporting responsibly!
+</code></pre></div><h2 id="viendo-detalles-del-log">Viendo detalles del log</h2>
+<p>Para ver más información sobre el cambio podemos hacer un <strong>git show</strong> al identificador, en este caso: <strong>47241a47f62ada864ec74bd6dedc4d33f4374699</strong>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/obteneridlog.png.png?raw=true" alt=""></p>
+<p>Ahora si, vamos a ver más a fondo este log:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/loginfo.png.png?raw=true" alt=""></p>
+<h2 id="obteniendo-la-flag-mediante-el-token">Obteniendo la flag (mediante el token)</h2>
+<p>Y vemos que el token: <strong>SFRCe3YzcnNpMG5fYzBudHIwbF9hbV9JX3JpZ2h0P30=</strong> encriptado en <em>Base64</em>, para ver su contenido en texto legible usaremos el comando de linux <strong>base64 -d</strong>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/flagoutput.png.png?raw=true" alt=""></p>
+<p>Y ya tendríamos nuestra flag: HTB{v3rsi0n_c0ntr0l_am_I_right?}*</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/market-dump/">
+            &#8592;
+            Anterior:
+            Market Dump / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/extraterrestrial-persistence/">
+            Siguiente:
+            Extraterrestial Persistence / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#analizando-directorio">Analizando directorio</a>
+      <ul>
+        <li><a href="#listado-de-logs">Listado de logs</a></li>
+        <li><a href="#viendo-detalles-del-log">Viendo detalles del log</a></li>
+        <li><a href="#obteniendo-la-flag-mediante-el-token">Obteniendo la flag (mediante el token)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 Jaime Gómez (Aka. Yoshl)</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

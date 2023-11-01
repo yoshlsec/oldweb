@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cybercheff on Jaime Gómez - (Aka. yoshl)</title>
+    <link>https://llo0zy.github.io/tags/cybercheff/</link>
+    <description>Recent content in cybercheff on Jaime Gómez - (Aka. yoshl)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 13 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/cybercheff/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Export / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/export/</link>
+      <pubDate>Fri, 13 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/export/</guid>
+      <description>Misión Saber quien se conecto al servidor mediante la información de un volcado de memoria en un archivo .raw
+Docker preparation Para esto necesitaremos instalarnos el docker y la siguiente imagen: https://hub.docker.com/r/blacktop/volatility
+docker pull blacktop/volatilityUna vez con la imagen pondremos un alias para usar el comando:
+alias vol=&amp;#39;docker run -it --rm -v $(pwd):/data:ro blacktop/volatility $@&amp;#39; Obteniendo el user Teniendo el archivo con extensión .raw vamos a usar el comando vol para obtener un poco más de información acerca de los últimos usuarios que modificaron el archivo:</description>
+    </item>
+    
+    <item>
+      <title>Chase / HTB Forensics</title>
+      <link>https://llo0zy.github.io/posts/chase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://llo0zy.github.io/posts/chase/</guid>
+      <description>Misión One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&amp;rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?
+Resumen: Un registro no autorizado en el servidor web de la red.
+Determinando víctima y atacante Al ser un registro no autorizado en la web del servidor podemos intuir que sera por el protocolo http, entonces vamos a empezar filtrando por el protocolo:</description>
+    </item>
+    
+  </channel>
+</rss>

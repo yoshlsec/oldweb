@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Logger / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, medium">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark'>
+
+    <meta property="og:url" content="http://example.org/posts/logger/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Logger / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, medium">
+    <meta property="og:image" content="http://example.org/">
+    <meta property="og:image:secure_url" content="http://example.org/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Logger / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, medium">
+    <meta property="twitter:domain" content="http://example.org/posts/logger/">
+    <meta property="twitter:url" content="http://example.org/posts/logger/">
+    <meta name="twitter:image" content="http://example.org/">
+
+    
+    <link rel="canonical" href="http://example.org/posts/logger/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://example.org/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://example.org/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://example.org/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://example.org/contact/"> Contact me </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://example.org/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://example.org/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://example.org/contact/"> Contact me </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Logger / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, medium</small>
+        <p class="post-date">
+            octubre 21, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://example.org/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="http://example.org/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="http://example.org/tags/wireshark">wireshark</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="misión">Misión</h2>
+<p>Nos han dado un <em>pcapng</em> con un filtro ya hecho de un protocolo <em>usb</em> en el cual nos informan de un posible <em>keylogger</em> (malware que te lee las teclas), y tenemos que encontrar lo que el keylogger recopilo.</p>
+<h3 id="filtrando-con-wireshark">Filtrando con Wireshark</h3>
+<p>Empezaremos filtrando por los paquetes que tengan contenido en su interior, para esto el <em>frame</em> del paquete tendra que ser <em>0x01</em>, en [[magik numbers]] equivalente a: <em>1b 00 20</em></p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/export/">
+            &#8592;
+            Anterior:
+            Export / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 13, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/wrong-spooky-season/">
+            Siguiente:
+            Wrong Spooky Season / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 Jaime Gómez (Aka. Yoshl)</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

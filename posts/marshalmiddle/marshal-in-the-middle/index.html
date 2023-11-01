@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Marshal in the Middle / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, medium">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, TLS'>
+
+    <meta property="og:url" content="http://example.org/posts/marshalmiddle/marshal-in-the-middle/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Marshal in the Middle / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, medium">
+    <meta property="og:image" content="http://example.org/">
+    <meta property="og:image:secure_url" content="http://example.org/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marshal in the Middle / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, medium">
+    <meta property="twitter:domain" content="http://example.org/posts/marshalmiddle/marshal-in-the-middle/">
+    <meta property="twitter:url" content="http://example.org/posts/marshalmiddle/marshal-in-the-middle/">
+    <meta name="twitter:image" content="http://example.org/">
+
+    
+    <link rel="canonical" href="http://example.org/posts/marshalmiddle/marshal-in-the-middle/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://example.org/">Jaime Gómez - (Aka. yoshl)</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://example.org/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://example.org/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://example.org/contact/"> Contact me </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://example.org/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://example.org/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://example.org/contact/"> Contact me </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Marshal in the Middle / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, medium</small>
+        <p class="post-date">
+            octubre 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://example.org/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="http://example.org/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="http://example.org/tags/wireshark">wireshark</a></li>
+        
+            <li class="post-tag"><a href="http://example.org/tags/tls">TLS</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p><em>The security team was alerted to suspicous network activity from a production web server.
+Can you determine if any data was stolen and what it was?</em></p>
+<h1 id="analizando-archivos">Analizando archivos</h1>
+<p>En este caso nos traen varios archivos, aquí un listado de ellos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> bundle.pem   chalcap.pcapng   secrets.log
+
+bro: <span style="color:#f92672">(</span>Directorio<span style="color:#f92672">)</span>
+ conn.log   dns.log   files.log   http.log   packet_filter.log   ssl.log   weird.log
+</code></pre></div><p>Buscando lo que es el archivo <strong>secrets.log</strong> vemos que es para leer el texto plano de un paquete SSL/TLS, investigando más logramos introducir estos &ldquo;secretos&rdquo; en las preferencias (<strong>Edit</strong> &gt; <strong>Preferences</strong>) de nuestro wireshark, para no tener problema alguno:</p>
+<p><img src="https://raw.githubusercontent.com/Llo0zy/images-web/main/0.png" alt=""></p>
+<p>Ahora si vamos a ver los paquetes de red en  el archivo: <strong>chalcap.pcapng</strong></p>
+<h1 id="analizando-con-wireshark">Analizando con wireshark</h1>
+<p>Como de costumbre empezamos viendo que las conversaciones entre las IPs y nos fijaremos en la conversación con más intercambio de datos, en este caso está entre las 2 <em>IPs</em>:</p>
+<ul>
+<li>Cliente -&gt; 10.10.20.13</li>
+<li>Servidor: -&gt; 104.20.208.21</li>
+</ul>
+<p>![[BlueUps/HTB/Marshal Middle/1.png.png]]</p>
+<p>Si aplicamos el filtro: <code>ip.addr == 10.10.20.13 &amp;&amp; ip.addr == 104.20.208.21</code>, nos llamara la atención el paquete de <strong>5725</strong> por la petición <em>POST</em> al directorio: <em>/api/api_post.php</em>, si hacemos un seguimiento al protocolo TCP (click derecho &gt; <strong>Follow</strong> &gt; <strong>HTTP Stream</strong>), nos mostrará las peticiones completas y veremos que está en el dominio <strong>pastebin.com</strong></p>
+<ul>
+<li>Dominio -&gt; pastebin.com</li>
+</ul>
+<p>![[2.png.png]]</p>
+<p>![[BlueUps/HTB/Marshal Middle/3.png.png]]</p>
+<h2 id="aplicando-filtro-del-dominio">Aplicando filtro del dominio</h2>
+<p>Como ya sabemos el dominio podemos hacer un filtro para tener más información sobre este:</p>
+<pre><code class="language-wireshark" data-lang="wireshark">http.host == &quot;pastebin.com&quot;
+</code></pre><p>Y si hacemos seguimiento <em>HTTP</em> a uno de estos 3 paquetes (es indiferente) nos llevará al segundo filtro:</p>
+<pre><code class="language-wireshark" data-lang="wireshark">tcp.port == 187
+</code></pre><p>![[BlueUps/HTB/Marshal Middle/4.png.png]]</p>
+<p>Y ahí podemos ver la flag que nos estaban pidiendo:</p>
+<pre><code>HTB{Th15_15_4_F3nD3r_Rh0d35_M0m3NT!!}
+</code></pre>
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/red-miners/">
+            &#8592;
+            Anterior:
+            Red Miners / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octubre 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/market-dump/">
+            Siguiente:
+            Market Dump / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octubre 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#analizando-archivos">Analizando archivos</a></li>
+    <li><a href="#analizando-con-wireshark">Analizando con wireshark</a>
+      <ul>
+        <li><a href="#aplicando-filtro-del-dominio">Aplicando filtro del dominio</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 Jaime Gómez (Aka. Yoshl)</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
