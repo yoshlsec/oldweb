@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>evtx on Jaime Gómez - (Aka. yoshl)</title>
+    <title>evtx on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/evtx/</link>
-    <description>Recent content in evtx on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in evtx on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Wed, 11 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/evtx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Event Horizon / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/event-horizon/</link>
+      <link>https://llo0zy.github.io/writeups/event-horizon/</link>
       <pubDate>Wed, 11 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/event-horizon/</guid>
+      <guid>https://llo0zy.github.io/writeups/event-horizon/</guid>
       <description>Misión Tenemos que descubrir que comandos ejecuto un hacker al integrarse en el equipo mediante la powershell, el problema es que borro el registro de esta pero no los archivos [[evtx]] que pueden tener algún tipo de pista.
 En Linux Filtrando archivos Al tener una cantidad de 325 archivos .evtx vamos a ver si todos tienen contenido con el comando file:
 file * | grep -v &amp;#34;empty&amp;#34; Transfiriendo: evtx &amp;gt; xml Una vez hecho esto, todos los archivos tendrán algún tipo de registro, y nos llama la atención el archivo -&amp;gt; Microsoft-Windows-PowerShell%4Operational.</description>

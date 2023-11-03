@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>networking on Jaime Gómez - (Aka. yoshl)</title>
+    <title>networking on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/networking/</link>
-    <description>Recent content in networking on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in networking on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Mon, 09 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chase / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/chase/</link>
+      <link>https://llo0zy.github.io/writeups/chase/</link>
       <pubDate>Mon, 09 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/chase/</guid>
+      <guid>https://llo0zy.github.io/writeups/chase/</guid>
       <description>Misión One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&amp;rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?
 Resumen: Un registro no autorizado en el servidor web de la red.
 Determinando víctima y atacante Al ser un registro no autorizado en la web del servidor podemos intuir que sera por el protocolo http, entonces vamos a empezar filtrando por el protocolo:</description>

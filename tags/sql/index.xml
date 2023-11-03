@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sql on Jaime Gómez - (Aka. yoshl)</title>
+    <title>sql on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/sql/</link>
-    <description>Recent content in sql on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in sql on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market Dump / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/market-dump/</link>
+      <link>https://llo0zy.github.io/writeups/market-dump/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/market-dump/</guid>
+      <guid>https://llo0zy.github.io/writeups/market-dump/</guid>
       <description>Misión Un hacker se conecto a nuestra página web e hizo una SQL Injection, cual fue la victima?
 Analizando paquetes por HTTP Como el enunciado nos indica el atacante entro a la página web, entonces filtraremos por el protocolo http
 http Fijandonos en un sql Hecho esto, vemos que hay una petición web a un archivo con extensión .sql:

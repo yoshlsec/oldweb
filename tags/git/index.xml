@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on Jaime Gómez - (Aka. yoshl)</title>
+    <title>git on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/git/</link>
-    <description>Recent content in git on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in git on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -89,10 +89,10 @@ WELCOME TO THE UPPERCASE SHELL &amp;gt;&amp;gt; ls sh: 1: LS: Permission denied 
     
     <item>
       <title>Illumination / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/illumination/</link>
+      <link>https://llo0zy.github.io/writeups/illumination/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/illumination/</guid>
+      <guid>https://llo0zy.github.io/writeups/illumination/</guid>
       <description>Misión Obtener el token secreto del programador Junior
 Analizando directorio Nada más descomprimido el archivo podemos ver que esta la carpeta .git:
 Listado de logs Haciendo un git log vemos que hay varios cambios:

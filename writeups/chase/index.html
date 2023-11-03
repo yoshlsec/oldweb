@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Chase / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, networking, cybercheff, htb'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/chase/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chase / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chase / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/chase/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/chase/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/chase/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Chase / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            October 9, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/wireshark">wireshark</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/networking">networking</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/cybercheff">cybercheff</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p><em>One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?</em></p>
+<p>Resumen: Un registro no autorizado en el servidor web de la red.</p>
+<h1 id="determinando-víctima-y-atacante">Determinando víctima y atacante</h1>
+<p>Al ser un registro no autorizado en la web del servidor podemos intuir que sera por el protocolo <em>http</em>, entonces vamos a empezar filtrando por el protocolo:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/SniffingHTTP.png.png?raw=true" alt=""></p>
+<p>Encontramos el registro perfecto <em>después del handshake</em> y deducimos que lo siguiente:</p>
+<ul>
+<li><strong>IP Servidor</strong> -&gt; <em>22.22.22.7</em></li>
+<li><strong>IP Atacante</strong> -&gt; <em>22.22.22.5</em></li>
+</ul>
+<p><strong>22.7</strong> es el servidor web ya que en el último paquete de red, el emisor (<em>22.7</em>) devuelve el paquete al receptor (<em>22.5</em>) con un código de estado <em>200 OK</em> significando que la petición <em>GET</em> de <em>22.5</em> fue exitosa, también vamos a examinar este paquete de red para confirmar esta suposición:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/EndHandshake.png.png?raw=true" alt=""></p>
+<p><em>PD: También podemos ver que esta haciendo una petición a un archivo .txt eso puede ser un archivo con credenciales o incluso la flag</em></p>
+<h2 id="siguiendo-registro-atacante">Siguiendo registro atacante</h2>
+<p>Para eso vamos a filtrar con el buscador de <em>wireshark</em> los paquetes que tengan como <em>ip emisora 22.22.22.5</em>.</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/RegistroAttck.png.png?raw=true" alt=""></p>
+<p>En uno de los archivos nos damos cuenta que después de la petición <em>GET /JBKEE&mdash;.txt</em> usa el puerto <em>4444</em> usado habitualmente para entablar conexión con la máquina victima, además de ser un puerto poco común en las peticiones de un servidor web&hellip;</p>
+<p>En la información de este paquete, mostrada en hexadecimal, podemos ver que esta usando un comando para ver el archivo: <strong>JBKEE&mdash;.txt</strong> por segunda vez (primera mediante la petición web).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">certutil -urlcache -split <span style="color:#f92672">-f</span> http<span style="color:#960050;background-color:#1e0010">:</span>//22.22.22.7//JBKEE--.txt c:\users\public
+</code></pre></div><h2 id="obteniendo-la-flag">Obteniendo la flag</h2>
+<p>Ya viendo que el atacante intenta obtener el contenido de ese archivo, vamos a ver que significa su nombre&hellip; esto lo podemos hacer con herramientas de pentesting como <em>johntheripper</em> o una herramienta de blue team llamada <strong>CyberChef</strong>, que está disponible en web.</p>
+<p>Dentro de esta web, pondremos el nombre del archivo en el placeholder superior (<em>input</em>)</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/Cybercheff1.png.png?raw=true" alt=""></p>
+<h3 id="base32-decrypt">Base32 Decrypt</h3>
+<p>Y notamos que al lado de <strong>Output</strong> hay una barita que si hacemos <em>holding</em> (poner el ratón por encima) veremos que está encriptada en <em>Base32</em></p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/CyberChefOutput.png.png?raw=true" alt=""></p>
+<p>Hecho esto, en la parte de la izquierda nos saldrá lo que se llama un <strong>STEP</strong> y al darle al gran botón verde que pone <em>BAKE!</em> nos saldrá el resultado en texto plano.</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2hhc2UK/CyberCheffOuytput.png.png?raw=true" alt=""></p>
+<p>Y ya tendríamos nuestra primera practica con <em>Wireshark</em> y <em>CyberChef</em>.</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+
+
+<div class="next-post">
+    <p>
+        <a href="/writeups/event-horizon/">
+            Next:
+            Event Horizon / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            October 11, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#determinando-víctima-y-atacante">Determinando víctima y atacante</a>
+      <ul>
+        <li><a href="#siguiendo-registro-atacante">Siguiendo registro atacante</a></li>
+        <li><a href="#obteniendo-la-flag">Obteniendo la flag</a>
+          <ul>
+            <li><a href="#base32-decrypt">Base32 Decrypt</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

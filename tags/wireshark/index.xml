@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wireshark on Jaime Gómez - (Aka. yoshl)</title>
+    <title>wireshark on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/wireshark/</link>
-    <description>Recent content in wireshark on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in wireshark on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 29 Oct 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market Dump / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/market-dump/</link>
+      <link>https://llo0zy.github.io/writeups/market-dump/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/market-dump/</guid>
+      <guid>https://llo0zy.github.io/writeups/market-dump/</guid>
       <description>Misión Un hacker se conecto a nuestra página web e hizo una SQL Injection, cual fue la victima?
 Analizando paquetes por HTTP Como el enunciado nos indica el atacante entro a la página web, entonces filtraremos por el protocolo http
 http Fijandonos en un sql Hecho esto, vemos que hay una petición web a un archivo con extensión .sql:
@@ -21,10 +21,10 @@ Seguimos conversación Cuando seguimos su conversación por HTTP nos damos cuent
     
     <item>
       <title>Marshal in the Middle / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/marshal-in-the-middle/</link>
+      <link>https://llo0zy.github.io/writeups/marshal-in-the-middle/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/marshal-in-the-middle/</guid>
+      <guid>https://llo0zy.github.io/writeups/marshal-in-the-middle/</guid>
       <description>Misión The security team was alerted to suspicous network activity from a production web server. Can you determine if any data was stolen and what it was?
 Listando archivos En este caso nos traen varios archivos, aquí un listado de ellos:
  bundle.pem  chalcap.pcapng  secrets.log bro: (Directorio)  conn.log  dns.log  files.log  http.log  packet_filter.log  ssl.log  weird.log Buscando lo que es el archivo secrets.log vemos que es para leer el texto plano de un paquete SSL/TLS, investigando más logramos introducir estos &amp;ldquo;secretos&amp;rdquo; en las preferencias (Edit &amp;gt; Preferences) de nuestro wireshark, para no tener problema alguno:</description>
@@ -32,39 +32,29 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
     
     <item>
       <title>PsExec / CyberDefender</title>
-      <link>https://llo0zy.github.io/posts/psexec-hunt/</link>
+      <link>https://llo0zy.github.io/writeups/psexec-hunt/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/psexec-hunt/</guid>
+      <guid>https://llo0zy.github.io/writeups/psexec-hunt/</guid>
       <description>Misión Nos están pidiendo que analicemos un registro de red donde un atacante a logrado registrarse como un usuario y luego pivotar a otro, nos exigen que les mostremos los siguientes datos:
  IP del atacante Hostname de la primera máquina Username de la primera máquina Hostname de la segunda máquina El comando que ha usado Las carpetas donde ha pivotado  Empezamos analizado las conversaciones Las conversaciones son los paquetes que tienen 2 hosts o más que se transmiten información en wireshark podemos ver una tabla de estas, para ello pulsaremos el botón superior: Statistics &amp;gt; Conversations:</description>
     </item>
     
     <item>
       <title>Wrong Spooky Season / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/wrong-spooky-season/</link>
+      <link>https://llo0zy.github.io/writeups/wrong-spooky-season/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/wrong-spooky-season/</guid>
+      <guid>https://llo0zy.github.io/writeups/wrong-spooky-season/</guid>
       <description>Mission &amp;ldquo;I told them it was too soon and in the wrong season to deploy such a website, but they assured me that theming it properly would be enough to stop the ghosts from haunting us. I was wrong.&amp;rdquo; Now there is an internal breach in the Spooky Network and you need to find out what happened. Analyze the the network traffic and find how the scary ghosts got in and what they did.</description>
     </item>
     
     <item>
-      <title>Logger / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/logger/</link>
-      <pubDate>Sat, 21 Oct 2023 15:51:15 +0100</pubDate>
-      
-      <guid>https://llo0zy.github.io/posts/logger/</guid>
-      <description>Misión Nos han dado un pcapng con un filtro ya hecho de un protocolo usb en el cual nos informan de un posible keylogger (malware que te lee las teclas), y tenemos que encontrar lo que el keylogger recopilo.
-Filtrando con Wireshark Empezaremos filtrando por los paquetes que tengan contenido en su interior, para esto el frame del paquete tendra que ser 0x01, en [[magik numbers]] equivalente a: 1b 00 20</description>
-    </item>
-    
-    <item>
       <title>Chase / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/chase/</link>
+      <link>https://llo0zy.github.io/writeups/chase/</link>
       <pubDate>Mon, 09 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/chase/</guid>
+      <guid>https://llo0zy.github.io/writeups/chase/</guid>
       <description>Misión One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&amp;rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?
 Resumen: Un registro no autorizado en el servidor web de la red.
 Determinando víctima y atacante Al ser un registro no autorizado en la web del servidor podemos intuir que sera por el protocolo http, entonces vamos a empezar filtrando por el protocolo:</description>

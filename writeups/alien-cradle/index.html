@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Alien Cradle / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, powershell, htb'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/alien-cradle/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alien Cradle / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alien Cradle / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/alien-cradle/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/alien-cradle/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/alien-cradle/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Alien Cradle / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            October 29, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/powershell">powershell</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p><em>In an attempt for the aliens to find more information about the relic, they launched an attack targeting Pandora&rsquo;s close friends and partners that may know any secret information about it. During a recent incident believed to be operated by them, Pandora located a weird PowerShell script from the event logs, otherwise called PowerShell cradle. These scripts are usually used to download and execute the next stage of the attack. However, it seems obfuscated, and Pandora cannot understand it. Can you help her deobfuscate it?</em></p>
+<h1 id="resolución">Resolución</h1>
+<p>Al hacer un <em>Get-Content/batcat</em> a nuestro archivo, podemos ver que tiene asignada una variable <strong>f</strong> que tiene el continedo de la flag, para ello exportaremos esa variable y la mostraremos para tener la flag en una sola pieza.</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/VmVyeUVhc3lGCg==/AlienCradler.png.png?raw=true" alt=""></p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/writeups/extraterrestrial-persistence/">
+            &#8592;
+            Previous:
+            Extraterrestial Persistence / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        October 29, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/writeups/indiser/">
+            Next:
+            Insider / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            October 31, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#resolución">Resolución</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

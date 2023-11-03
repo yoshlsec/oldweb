@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>forensics on Jaime Gómez - (Aka. yoshl)</title>
+    <title>forensics on Welcome to Jaime Gómez&#39;s blog</title>
     <link>https://llo0zy.github.io/tags/forensics/</link>
-    <description>Recent content in forensics on Jaime Gómez - (Aka. yoshl)</description>
+    <description>Recent content in forensics on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Tue, 31 Oct 2023 16:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Insider / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/indiser/</link>
+      <link>https://llo0zy.github.io/writeups/indiser/</link>
       <pubDate>Tue, 31 Oct 2023 16:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/indiser/</guid>
+      <guid>https://llo0zy.github.io/writeups/indiser/</guid>
       <description>Misión Se ha detectado una posible amenaza y nos han manado un archivo de Mo&amp;lt;illa Firefox para informar sobre el tema.
 Requesitos Para este nivel usaremos una herramienta de github que nos viene muy bien para [[dumpear]] archivos de firefox, pero también os dejo un par más para que os acostumbréis a este tipo de datos:
   https://github.com/unode/firefox_decrypt -&amp;gt; Nos saca las contraseñas de los perfiles
@@ -21,19 +21,19 @@ Requesitos Para este nivel usaremos una herramienta de github que nos viene muy 
     
     <item>
       <title>Alien Cradle / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/alien-cradle/</link>
+      <link>https://llo0zy.github.io/writeups/alien-cradle/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/alien-cradle/</guid>
+      <guid>https://llo0zy.github.io/writeups/alien-cradle/</guid>
       <description>Misión In an attempt for the aliens to find more information about the relic, they launched an attack targeting Pandora&amp;rsquo;s close friends and partners that may know any secret information about it. During a recent incident believed to be operated by them, Pandora located a weird PowerShell script from the event logs, otherwise called PowerShell cradle. These scripts are usually used to download and execute the next stage of the attack.</description>
     </item>
     
     <item>
       <title>Extraterrestial Persistence / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/extraterrestrial-persistence/</link>
+      <link>https://llo0zy.github.io/writeups/extraterrestrial-persistence/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/extraterrestrial-persistence/</guid>
+      <guid>https://llo0zy.github.io/writeups/extraterrestrial-persistence/</guid>
       <description>Misión There is a rumor that aliens have developed a persistence mechanism that is impossible to detect. After investigating her recently compromised Linux server, Pandora found a possible sample of this mechanism. Can you analyze it and find out how they install their persistence?
 Analizando archivo sh Nos dan un archivo .sh que por su extensión sabemos que esta escrito en bash y lo abrimos:
 n=`whoami` h=`hostname` path=&amp;#39;/usr/local/bin/service&amp;#39; if [[ &amp;#34;$n&amp;#34; !</description>
@@ -41,10 +41,10 @@ n=`whoami` h=`hostname` path=&amp;#39;/usr/local/bin/service&amp;#39; if [[ &amp
     
     <item>
       <title>Illumination / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/illumination/</link>
+      <link>https://llo0zy.github.io/writeups/illumination/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/illumination/</guid>
+      <guid>https://llo0zy.github.io/writeups/illumination/</guid>
       <description>Misión Obtener el token secreto del programador Junior
 Analizando directorio Nada más descomprimido el archivo podemos ver que esta la carpeta .git:
 Listado de logs Haciendo un git log vemos que hay varios cambios:
@@ -55,10 +55,10 @@ Thanks to contributors, I removed the unique token as it was a security risk. Th
     
     <item>
       <title>Market Dump / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/market-dump/</link>
+      <link>https://llo0zy.github.io/writeups/market-dump/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/market-dump/</guid>
+      <guid>https://llo0zy.github.io/writeups/market-dump/</guid>
       <description>Misión Un hacker se conecto a nuestra página web e hizo una SQL Injection, cual fue la victima?
 Analizando paquetes por HTTP Como el enunciado nos indica el atacante entro a la página web, entonces filtraremos por el protocolo http
 http Fijandonos en un sql Hecho esto, vemos que hay una petición web a un archivo con extensión .sql:
@@ -67,10 +67,10 @@ Seguimos conversación Cuando seguimos su conversación por HTTP nos damos cuent
     
     <item>
       <title>Marshal in the Middle / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/marshal-in-the-middle/</link>
+      <link>https://llo0zy.github.io/writeups/marshal-in-the-middle/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/marshal-in-the-middle/</guid>
+      <guid>https://llo0zy.github.io/writeups/marshal-in-the-middle/</guid>
       <description>Misión The security team was alerted to suspicous network activity from a production web server. Can you determine if any data was stolen and what it was?
 Listando archivos En este caso nos traen varios archivos, aquí un listado de ellos:
  bundle.pem  chalcap.pcapng  secrets.log bro: (Directorio)  conn.log  dns.log  files.log  http.log  packet_filter.log  ssl.log  weird.log Buscando lo que es el archivo secrets.log vemos que es para leer el texto plano de un paquete SSL/TLS, investigando más logramos introducir estos &amp;ldquo;secretos&amp;rdquo; en las preferencias (Edit &amp;gt; Preferences) de nuestro wireshark, para no tener problema alguno:</description>
@@ -78,48 +78,38 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
     
     <item>
       <title>PsExec / CyberDefender</title>
-      <link>https://llo0zy.github.io/posts/psexec-hunt/</link>
+      <link>https://llo0zy.github.io/writeups/psexec-hunt/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/psexec-hunt/</guid>
+      <guid>https://llo0zy.github.io/writeups/psexec-hunt/</guid>
       <description>Misión Nos están pidiendo que analicemos un registro de red donde un atacante a logrado registrarse como un usuario y luego pivotar a otro, nos exigen que les mostremos los siguientes datos:
  IP del atacante Hostname de la primera máquina Username de la primera máquina Hostname de la segunda máquina El comando que ha usado Las carpetas donde ha pivotado  Empezamos analizado las conversaciones Las conversaciones son los paquetes que tienen 2 hosts o más que se transmiten información en wireshark podemos ver una tabla de estas, para ello pulsaremos el botón superior: Statistics &amp;gt; Conversations:</description>
     </item>
     
     <item>
       <title>Red Miners / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/red-miners/</link>
+      <link>https://llo0zy.github.io/writeups/red-miners/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/red-miners/</guid>
+      <guid>https://llo0zy.github.io/writeups/red-miners/</guid>
       <description>Misión In the race for Vitalium on Mars, the villainous Board of Arodor resorted to desperate measures, needing funds for their mining attempts. They devised a botnet specifically crafted to mine cryptocurrency covertly. We stumbled upon a sample of Arodor&amp;rsquo;s miner&amp;rsquo;s installer on our server. Recognizing the gravity of the situation, we launched a thorough investigation. With you as its leader, you need to unravel the inner workings of the installation mechanism.</description>
     </item>
     
     <item>
       <title>Wrong Spooky Season / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/wrong-spooky-season/</link>
+      <link>https://llo0zy.github.io/writeups/wrong-spooky-season/</link>
       <pubDate>Sun, 29 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/wrong-spooky-season/</guid>
+      <guid>https://llo0zy.github.io/writeups/wrong-spooky-season/</guid>
       <description>Mission &amp;ldquo;I told them it was too soon and in the wrong season to deploy such a website, but they assured me that theming it properly would be enough to stop the ghosts from haunting us. I was wrong.&amp;rdquo; Now there is an internal breach in the Spooky Network and you need to find out what happened. Analyze the the network traffic and find how the scary ghosts got in and what they did.</description>
     </item>
     
     <item>
-      <title>Logger / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/logger/</link>
-      <pubDate>Sat, 21 Oct 2023 15:51:15 +0100</pubDate>
-      
-      <guid>https://llo0zy.github.io/posts/logger/</guid>
-      <description>Misión Nos han dado un pcapng con un filtro ya hecho de un protocolo usb en el cual nos informan de un posible keylogger (malware que te lee las teclas), y tenemos que encontrar lo que el keylogger recopilo.
-Filtrando con Wireshark Empezaremos filtrando por los paquetes que tengan contenido en su interior, para esto el frame del paquete tendra que ser 0x01, en [[magik numbers]] equivalente a: 1b 00 20</description>
-    </item>
-    
-    <item>
       <title>Export / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/export/</link>
+      <link>https://llo0zy.github.io/writeups/export/</link>
       <pubDate>Fri, 13 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/export/</guid>
+      <guid>https://llo0zy.github.io/writeups/export/</guid>
       <description>Misión Saber quien se conecto al servidor mediante la información de un volcado de memoria en un archivo .raw
 Docker preparation Para esto necesitaremos instalarnos el docker y la siguiente imagen: https://hub.docker.com/r/blacktop/volatility
 docker pull blacktop/volatilityUna vez con la imagen pondremos un alias para usar el comando:
@@ -128,10 +118,10 @@ alias vol=&amp;#39;docker run -it --rm -v $(pwd):/data:ro blacktop/volatility $@
     
     <item>
       <title>Event Horizon / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/event-horizon/</link>
+      <link>https://llo0zy.github.io/writeups/event-horizon/</link>
       <pubDate>Wed, 11 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/event-horizon/</guid>
+      <guid>https://llo0zy.github.io/writeups/event-horizon/</guid>
       <description>Misión Tenemos que descubrir que comandos ejecuto un hacker al integrarse en el equipo mediante la powershell, el problema es que borro el registro de esta pero no los archivos [[evtx]] que pueden tener algún tipo de pista.
 En Linux Filtrando archivos Al tener una cantidad de 325 archivos .evtx vamos a ver si todos tienen contenido con el comando file:
 file * | grep -v &amp;#34;empty&amp;#34; Transfiriendo: evtx &amp;gt; xml Una vez hecho esto, todos los archivos tendrán algún tipo de registro, y nos llama la atención el archivo -&amp;gt; Microsoft-Windows-PowerShell%4Operational.</description>
@@ -139,10 +129,10 @@ file * | grep -v &amp;#34;empty&amp;#34; Transfiriendo: evtx &amp;gt; xml Una ve
     
     <item>
       <title>Chase / HTB Forensics</title>
-      <link>https://llo0zy.github.io/posts/chase/</link>
+      <link>https://llo0zy.github.io/writeups/chase/</link>
       <pubDate>Mon, 09 Oct 2023 15:51:15 +0100</pubDate>
       
-      <guid>https://llo0zy.github.io/posts/chase/</guid>
+      <guid>https://llo0zy.github.io/writeups/chase/</guid>
       <description>Misión One of our web servers triggered an AV alert, but none of the sysadmins say they were logged onto it. We&amp;rsquo;ve taken a network capture before shutting the server down to take a clone of the disk. Can you take a look at the PCAP and see if anything is up?
 Resumen: Un registro no autorizado en el servidor web de la red.
 Determinando víctima y atacante Al ser un registro no autorizado en la web del servidor podemos intuir que sera por el protocolo http, entonces vamos a empezar filtrando por el protocolo:</description>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Event Horizon / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, medium">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, powershell, evtx, event log explorer, htb'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/event-horizon/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Event Horizon / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, medium">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Event Horizon / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, medium">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/event-horizon/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/event-horizon/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/event-horizon/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Event Horizon / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, medium</small>
+        <p class="post-date">
+            October 11, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/powershell">powershell</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/evtx">evtx</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/event-log-explorer">event log explorer</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="misión">Misión</h1>
+<p>Tenemos que descubrir que comandos ejecuto un hacker al integrarse en el equipo mediante la powershell, el problema es que borro el registro de esta pero no los archivos <em>[[evtx]]</em> que pueden tener algún tipo de pista.</p>
+<h1 id="en-linux">En Linux</h1>
+<h2 id="filtrando-archivos">Filtrando archivos</h2>
+<p>Al tener una cantidad de 325 archivos <em>.evtx</em> vamos a ver si todos tienen contenido con el comando <em>file</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file * | grep -v <span style="color:#e6db74">&#34;empty&#34;</span>
+</code></pre></div><h3 id="transfiriendo-evtx--xml">Transfiriendo: evtx &gt; xml</h3>
+<p>Una vez hecho esto, todos los archivos tendrán algún tipo de registro, y nos llama la atención el archivo -&gt; <strong>Microsoft-Windows-PowerShell%4Operational.evtx</strong>
+Así que pasamos todo su contenido a un archivo xml:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">evtxtract ./Microsoft-Windows-PowerShell%4Operational.evtx &gt; ./logs.xml
+</code></pre></div><h2 id="leyendo-archivo-xml">Leyendo archivo xml</h2>
+<p>Como sabemos que hubo un intruso vamos a ver si el firewall detecto algo, por lo general este nos manda un error con la siguiente sintaxis:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Error Message <span style="color:#f92672">=</span> At line:n char:n
+</code></pre></div><p>Entonces con nuestros conocimientos de bash, vamos a usar el comando <em>grep</em> para filtrar por esas lineas y las 2 siguientes para ver de que se trata el error:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/invokegrep.png.png?raw=true" alt=""></p>
+<p>Investigando un poco podemos ver que <em>Mimikatz</em> es una herramienta de post-explotación  que vuelca las credenciales/contraseñas de texto sin formato de la memoria, junto con hashes, códigos PIN y vales Kerberos. Básicamente una vez que tenemos acceso a la máquina usamos <em>Mimikatz</em> para ver algún tipo de credenciales sueltas por el sistema.</p>
+<h3 id="error-opcode">Error Opcode</h3>
+<p>Si vemos más sobre el error, obtenemos su <em>Opcode</em> que nos sirve para ver más información sobre este error:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/opcodelinuxshell.png.png?raw=true" alt=""></p>
+<h3 id="filtrando-opcode--flag">Filtrando Opcode + flag</h3>
+<p>Ahora si buscamos por el <em>número del Opcode</em> en la lista de los errores (<em>mismo archivo</em>), nos saldra la información que queremos:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/Viendolaflagshell.png.png?raw=true" alt=""></p>
+<p>Para esto hay que saber que el argumento <em>MessageNumber</em> es equivalente al <em>número del Opcode</em> de un error, con eso ya tendríamos nuestra flag; aquí os dejo como sería hacerlo desde la aplicación <em>Event Log Explorer</em> disponible en Windows.</p>
+<h1 id="en-windows">En Windows</h1>
+<h2 id="event-log-explorer">Event Log Explorer</h2>
+<p>Mucho más fácil e intuitivo nada más abrir el archivo nos sale un aviso de un error sobre el anti-virus, que detecto el fallo anteriormente mencionado en Linux</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/EventLogEpxlorer.png.png?raw=true" alt=""></p>
+<h3 id="filtrar-por-id">Filtrar por ID</h3>
+<p>Ahora si, podemos darle a un botón que nos filtra por el <em>ID</em> del evento y nos saldrán otros avisos&hellip;</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/Filterbutton.png.png?raw=true" alt=""></p>
+<h2 id="obteniendo-la-flag">Obteniendo la flag</h2>
+<p>Dentro de los avisos podemos encontrar la flag y el contenido de estos:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/RXZlbnRcIEhvcml6b24K/Viendolaflag.png.png?raw=true" alt=""></p>
+<p>Y ahí obtenemos la flag: <em>HTB{&mdash;}</em>.</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/writeups/chase/">
+            &#8592;
+            Previous:
+            Chase / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        October 9, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/writeups/export/">
+            Next:
+            Export / HTB Forensics
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            October 13, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#misión">Misión</a></li>
+    <li><a href="#en-linux">En Linux</a>
+      <ul>
+        <li><a href="#filtrando-archivos">Filtrando archivos</a>
+          <ul>
+            <li><a href="#transfiriendo-evtx--xml">Transfiriendo: evtx &gt; xml</a></li>
+          </ul>
+        </li>
+        <li><a href="#leyendo-archivo-xml">Leyendo archivo xml</a>
+          <ul>
+            <li><a href="#error-opcode">Error Opcode</a></li>
+            <li><a href="#filtrando-opcode--flag">Filtrando Opcode + flag</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#en-windows">En Windows</a>
+      <ul>
+        <li><a href="#event-log-explorer">Event Log Explorer</a>
+          <ul>
+            <li><a href="#filtrar-por-id">Filtrar por ID</a></li>
+          </ul>
+        </li>
+        <li><a href="#obteniendo-la-flag">Obteniendo la flag</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>
