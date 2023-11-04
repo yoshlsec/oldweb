@@ -17,26 +17,26 @@
     
 
     
-    <title>Posts Index</title>
+    <title>Century14 / Underthewire</title>
     <meta name="description" content="">
-    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez'>
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, century, ssh, powershell, windows'>
 
-    <meta property="og:url" content="https://llo0zy.github.io/posts/">
+    <meta property="og:url" content="https://llo0zy.github.io/century/century14/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Posts Index">
+    <meta property="og:title" content="Century14 / Underthewire">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
     <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Posts Index">
+    <meta name="twitter:title" content="Century14 / Underthewire">
     <meta name="twitter:description" content="">
-    <meta property="twitter:domain" content="https://llo0zy.github.io/posts/">
-    <meta property="twitter:url" content="https://llo0zy.github.io/posts/">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/century/century14/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/century/century14/">
     <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
 
     
-    <link rel="canonical" href="https://llo0zy.github.io/posts/" />
+    <link rel="canonical" href="https://llo0zy.github.io/century/century14/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -137,34 +137,104 @@
 </header>
 <main id="content">
     <div class="post container">
-
     <div class="post-header-section">
-        <h1>Posts Index</h1>
+        <h1>Century14 / Underthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            November 4, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/century">century</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/powershell">powershell</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/windows">windows</a></li>
+        
+        </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <p>Bienvenido a índice de todos el contenido que ire subiendo, tanto de informática como de apuntes variados&hellip;</p>
-<ul>
-<li>
-<h4 id="wrireupswriteups"><a href="../writeups/">Wrireups</a></h4>
-</li>
-<li>
-<h4 id="bandit-levelsbandit"><a href="../bandit/">Bandit Levels</a></h4>
-</li>
-<li>
-<h4 id="century-levelscentury"><a href="../century">Century Levels</a></h4>
-</li>
-<li>
-<h4 id="comming-soon"><a href=".">Comming soon&hellip;</a></h4>
-</li>
-</ul>
+            <h1 id="información">Información</h1>
+<p>La contraseña para el último nivel esta en el número de palabras <em>polo</em> que están dentro del archivo: <em>countpolos</em></p>
+<h1 id="filtrado-por-los-caracteres">Filtrado por los caracteres</h1>
+<p>Vamos a empezar filtrando por los caracteres: <em>polo</em>, gracias a comando <em>Select-String</em> junto a su parámetro <em>-pattern</em> podemos filtrar por esto. Cabe recordar que vamos a modificar el <em>stdout</em> del archivo para optimizar un poco el proceso, recordar que esto lo hemos dado en niveles anteriores, si no lo entiendes porfavor vuelva para atras y mirate el nivel donde tocamos dichos comandos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">(Get-Content .\countpolos) -split <span style="color:#e6db74">&#34; &#34;</span> | Select-String -pattern <span style="color:#e6db74">&#34;polo&#34;</span>
+</code></pre></div><p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2VudHVyeUltYWdlc1Bvd2Vyc2hlbGxMb2wxMjM0Cg==/century14a.png?raw=true" alt="century14a"></p>
+<p>Al hacer dicho comando podemos apreciar que nos aparecen palabras no deseadas como: <em>anthropologies</em>.</p>
+<h2 id="evitando-palabras-no-deseadas">Evitando palabras no deseadas</h2>
+<p>Para que solo nos aparezcan palabras <strong>polo</strong> filtraremos por los bites, tan simple como añadir: <code>\b</code> antes y después del filtro, quedando de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">(Get-Content .\countpolos) -split <span style="color:#e6db74">&#34; &#34;</span> | Select-String -pattern <span style="color:#e6db74">&#34;\bpolo\b&#34;</span>
+</code></pre></div><h2 id="función-para-contar-polos">Función para contar polos</h2>
+<p>Una vez que tenemos ya el listado de todas las palabras <em>polo</em> vamos a contarlas, para no hacerlo manual usaremos la función integrada de powershell llamada: <strong>().lenght</strong> que nos permite saber el número de lineas de un output:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2VudHVyeUltYWdlc1Bvd2Vyc2hlbGxMb2wxMjM0Cg==/century14b.png?raw=true" alt="century14b"></p>
+<p>Dandonos como resultado el número: <strong>153</strong> contraseña del último nivel de Century.</p>
 
         </p>
+        
     </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/century/century15/">
+            &#8592;
+            Previous:
+            Century15 / Underthewire
+        </a>
+    </p>
+    <p class="prev-post-date">
+        November 4, 2023
+    </p>
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/century/century13/">
+            Next:
+            Century13 / Underthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            November 4, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#filtrado-por-los-caracteres">Filtrado por los caracteres</a>
+      <ul>
+        <li><a href="#evitando-palabras-no-deseadas">Evitando palabras no deseadas</a></li>
+        <li><a href="#función-para-contar-polos">Función para contar polos</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
 
         </main><footer class="footer">
     

@@ -17,26 +17,26 @@
     
 
     
-    <title>powershell</title>
+    <title>Century09 / Underthewire</title>
     <meta name="description" content="">
-    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez'>
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, century, ssh, powershell, windows'>
 
-    <meta property="og:url" content="https://llo0zy.github.io/tags/powershell/">
+    <meta property="og:url" content="https://llo0zy.github.io/century/century9/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="powershell">
+    <meta property="og:title" content="Century09 / Underthewire">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
     <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="powershell">
+    <meta name="twitter:title" content="Century09 / Underthewire">
     <meta name="twitter:description" content="">
-    <meta property="twitter:domain" content="https://llo0zy.github.io/tags/powershell/">
-    <meta property="twitter:url" content="https://llo0zy.github.io/tags/powershell/">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/century/century9/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/century/century9/">
     <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
 
     
-    <link rel="canonical" href="https://llo0zy.github.io/tags/powershell/" />
+    <link rel="canonical" href="https://llo0zy.github.io/century/century9/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -136,102 +136,94 @@
     </nav>
 </header>
 <main id="content">
-    <div class="container list-posts">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Century09 / Underthewire</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            November 3, 2023
+        </p>
 
-    <h1 class="list-title">powershell</h1>
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/century">century</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/ssh">ssh</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/powershell">powershell</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/windows">windows</a></li>
+        
+        </ul>
+    </div>
 
-    
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>La contraseña del siguiente nivel es la palabra que esta en la posición <em>161</em> del único archivo del directorio.</p>
+<h1 id="analizando-el-arhivo">Analizando el arhivo</h1>
+<p>Al hacer un <em>Get-Content</em> simple podemos analizar que las palabras están separas por espacios, para estar más comodos vamos a reemplazar dichos espacios por un salto de linea:</p>
+<h2 id="archivo-original">Archivo original</h2>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2VudHVyeUltYWdlc1Bvd2Vyc2hlbGxMb2wxMjM0Cg==/century9a.png?raw=true" alt="century9a"></p>
+<h2 id="archivo-modificado">Archivo modificado</h2>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/Q2VudHVyeUltYWdlc1Bvd2Vyc2hlbGxMb2wxMjM0Cg==/century9b.png?raw=true" alt="century9b"></p>
+<p>Como podemos ver por cada espacio que teniamos hemos hecho un salto de linea, lo podemos hacer de dicha manera o también usando el comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">(Get-Content .\Word_File.txt).split(<span style="color:#e6db74">&#39; &#39;</span>)
+</code></pre></div><h1 id="filtrando-por-la-161-posición">Filtrando por la 161 posición</h1>
+<p>Como bien sabemos los ordenadores no empiezan a contar por el <strong>1</strong> sino por el <strong>0</strong>, entonces si queremos filtrar por la posición <strong>161</strong> debemos marcar la posición <strong>160</strong>, es decir, una menor a la requerida.</p>
+<p>Para filtrar por dicha posición podemos usar el parámetro <em>-Index</em> del comando: <em>Select-Object</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PS C:\users\century9\desktop&gt; (Get-Content .\Word_File.txt).split(<span style="color:#e6db74">&#39; &#39;</span>) | Select-Object -Index 160
+pierid        
+</code></pre></div>
+        </p>
+        
+    </div>
 
-    <h2 class="posts-year">2023</h2><article class="post-title">
-    <a href="https://llo0zy.github.io/century/century15/" class="post-link">Century15 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century14/" class="post-link">Century14 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century13/" class="post-link">Century13 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century12/" class="post-link">Century12 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century11/" class="post-link">Century11 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century10/" class="post-link">Century10 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 4, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century9/" class="post-link">Century09 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century8/" class="post-link">Century08 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century7/" class="post-link">Century07 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century6/" class="post-link">Century06 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century5/" class="post-link">Century05 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century4/" class="post-link">Century04 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century3/" class="post-link">Century03 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century2/" class="post-link">Century02 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/century/century1/" class="post-link">Century01 / Underthewire</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/writeups/alien-cradle/" class="post-link">Alien Cradle / HTB Forensics</a>
-    <div class="flex-break"></div>
-    <span class="post-date">October 29, 2023</span>
-</article>
-<article class="post-title">
-    <a href="https://llo0zy.github.io/writeups/event-horizon/" class="post-link">Event Horizon / HTB Forensics</a>
-    <div class="flex-break"></div>
-    <span class="post-date">October 11, 2023</span>
-</article>
+    <div class="prev-next">
+        
+            
+                
 
-    
 
+<div class="next-post">
+    <p>
+        <a href="/century/century8/">
+            Next:
+            Century08 / Underthewire
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            November 3, 2023
+        </p>
 </div>
 
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#analizando-el-arhivo">Analizando el arhivo</a>
+      <ul>
+        <li><a href="#archivo-original">Archivo original</a></li>
+        <li><a href="#archivo-modificado">Archivo modificado</a></li>
+      </ul>
+    </li>
+    <li><a href="#filtrando-por-la-161-posición">Filtrando por la 161 posición</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
 
         </main><footer class="footer">
     

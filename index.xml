@@ -6,7 +6,172 @@
     <description>Recent content on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 31 Oct 2023 16:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 12:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Century10 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century10/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century10/</guid>
+      <description>Información La contraseña de este nivel esta en la posición: 8 y 10 de la descripción del Windows Update service
+Filtrando por servicios Para filtrar un servicio tenemos que saber exactamente que es, cierto?
+¿Qué es un servicio? Un servicio de Windows es un proceso de segundo plano que esta ejecutando nuestra máquina para la seguridad y el funcionamiento correcto de está, también tenemos que tener claro que Linux como tal no tiene servicios como Windows, para este último podemos filtrar con el comando: Get-WmiObject, en la otra mano para filtrar por Linux podriamos usar comandos como: htop u otros para mostrar el proceso de estos.</description>
+    </item>
+    
+    <item>
+      <title>Century11 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century11/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century11/</guid>
+      <description>Información La contraseña es el nombre del archivo que está dentro del directorio del usuario actual pero esta escondido.
+Solución Get-ChildItem Un nivel bastante sencillo simplemente tenemos que usar 2 parametros extra en el comando Get-ChildItem:
+ El primero sería: -R, de recursive, sirve por si te encuentras un directorio que tambien lo inspeccione y así sucesivamente. Después el parámetro -Hidden como su nombre indica para que nos muestre archivos ocultos Para ser más optimos filtrar solo por archivos, para esto usaremos: -File Y por último para evitar los mensajes de error llevaremos el stderr (2) a la papelera, que esta ya definida en al variale: $null  El comando quedaría de la siguiente manera:</description>
+    </item>
+    
+    <item>
+      <title>Century12 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century12/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century12/</guid>
+      <description>Información La contraseña para el siguiente nivel es la mezcla del nombre seleccionado por el control de dominios y el nombre del archivo
+Obteniendo el nombre de usuario Para obtener el nombre que nos asigno el Domain Controller lo tenemos que hacer con el comando: Get-ADDomainController
+Una vez con el nombre: UTW podemos ver la descripción de su función en el Domain Controller
+Obteniendo función de UTW Suena complicado pero con el comando: Get-Adcomputer podemos filtrar por usuario y por objeto para agilizar el proceso, los parámetros para usar son:</description>
+    </item>
+    
+    <item>
+      <title>Century13 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century13/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century13/</guid>
+      <description>Información La contraseña del siguiente nivel es el número de palabras que hay en el archivo: countmywords
+Soluciçón Measure Con el comando usado anteirormente podemos filtrar por palabras en un archivo para ello tenemos que añadir el parámetro -Words</description>
+    </item>
+    
+    <item>
+      <title>Century14 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century14/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century14/</guid>
+      <description>Información La contraseña para el último nivel esta en el número de palabras polo que están dentro del archivo: countpolos
+Filtrado por los caracteres Vamos a empezar filtrando por los caracteres: polo, gracias a comando Select-String junto a su parámetro -pattern podemos filtrar por esto. Cabe recordar que vamos a modificar el stdout del archivo para optimizar un poco el proceso, recordar que esto lo hemos dado en niveles anteriores, si no lo entiendes porfavor vuelva para atras y mirate el nivel donde tocamos dichos comandos:</description>
+    </item>
+    
+    <item>
+      <title>Century15 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century15/</link>
+      <pubDate>Sat, 04 Nov 2023 12:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century15/</guid>
+      <description>Felicidades Has terminado los 14 niveles de Century ya eres un crack con powershell, recuerda que si no has entendido algo comando vuelvete a mirar el tutorial y seguro que lo entiendes.
+Es recomendable seguir esta guía de una manera pausada y lenta para enterarse de todos los comandos y no llegar a saturarse/frustrarse, dicho esto muchas felicidades por pasarte los niveles!!!</description>
+    </item>
+    
+    <item>
+      <title>Century01 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century1/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century1/</guid>
+      <description>Información Para este primer nivel tenemos que encontrar la contraseña de century2 y nos dan las siguientes pistas:
+ El formato de la contraseña es: **.*.*****.**** Mira la versión del montaje (Build Version)  Como credenciales tenemos: century1:century1
+Registrandonos Como en bash, powershell tiene el comando shh usado para conexiones remotas, con los mismos parámetros y funciones, cualquier otra duda podeís ver el nivel 0 de bandit, donde explicamos más a fondo como funciona este comando, dicho esto este será el comando utilizado para registranos al servidor:</description>
+    </item>
+    
+    <item>
+      <title>Century02 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century2/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century2/</guid>
+      <description>Información En este nivel nos esta mencionando el comando wget de bash y que hay un comando con la misma función en powershell, y nos indica que la contraseña para el siguiente nivel es la combinación del nombre del comando todo en minúsculas añadiendo el nombre del archivo que está en el directorio
+Obteniendo nombre del archivo Primero de todo, vamos a obtener el nombre del archivo para tachar uno de los 2 objetivos que nos propone el resto, para ello usaremos el comando: Get-ChildItem</description>
+    </item>
+    
+    <item>
+      <title>Century03 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century3/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century3/</guid>
+      <description>Información La única pista que tenemos es que la contraseña es el número de archivo que hay en el directorio actual, para ello lo podemos resolver de distintas maneras.
+Solución 1 La primera solución es usando la función: ().count, la cual nos cuenta el número de objetos que nos muestra el output.
+PS C:\users\century3\desktop&amp;gt; (Get-ChildItem).count 123 Solución 2 Un poco más compleja que la anterior aquí usamos un segundo comando llamado: Measure-Object, que nos calcula el número de objectos, la suma de estos, el máximo, el mínimo, etc, etc.</description>
+    </item>
+    
+    <item>
+      <title>Century04 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century4/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century4/</guid>
+      <description>Información La contraseña para el siguiente esta em el nombre del archivo dentro del directorio con espacios
+Translado de directorio Para pivotar (cambiar) entre directorios podemos usar el comando: Set-Location también conocido como cd, al tener espacios en el nombre podemos llamarlo de varias maneras, aqui un pequeño listado:
+Llamado 1 Set-Location Can* Llamado 2 Set-Location &amp;#39;.\Can you open me&amp;#39; Obteniendo la contraseña Una vez dentro hacemos un: Get-ChildItem y consegimos el nombre de dicho archivo, en este caso:</description>
+    </item>
+    
+    <item>
+      <title>Century05 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century5/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century5/</guid>
+      <description>Información La contraseña para el siguiente nivel esta en el nombre del dominio y el nombre del archivo
+Obteniendo nombre del dominio Para esto podemos usar el comando: Get-ADDomain -Current LocalComputer, que nos muestra mucha información sobre el sistema:
+Para que nos muestre solo el nombre podemos usar la función: ().name filtrando unicamente por el contenido del objecto Name
+PS C:\users\century5\desktop&amp;gt; (Get-ADDomain -Current LocalComputer).name underthewire Obteninedo nombre del archivo Aquí agilizamos un poco el proceso con el comando: (Get-ChildItem).</description>
+    </item>
+    
+    <item>
+      <title>Century06 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century6/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century6/</guid>
+      <description>Información La contraseña es el número de directorios que hay en el direcotiro actual
+Resolución Exactamente como el nivel de Century3, pero solo cambiando de archivos a directorios, usamos el mismo comando:
+PS C:\users\century6\desktop&amp;gt; (Get-ChildItem).count 197 </description>
+    </item>
+    
+    <item>
+      <title>Century07 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century7/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century7/</guid>
+      <description>Información La contraseña esta en algun direcotorio del usuario actual, con el nombre del archivo: Readme.d
+Obtener flag También muy simple, con el parámetro -R del comando Get-ChildItem, nos muestra todos los archivos dentro de los directorios, y podemos fijarnos que entre ellos nos encontramos con el archivo: Readme.md.
+Después de esto hacemos un Get-Content.
+PS C:\users\century7\desktop&amp;gt; Get-Content &amp;#39;..\Downloads\Readme.txt&amp;#39; 7points </description>
+    </item>
+    
+    <item>
+      <title>Century08 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century8/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century8/</guid>
+      <description>Información La contraseña es el número de números únicos del archivo, para esto lo podemos hacer de 2 maneras
+Solución / Get-Unique Ambas soluciones son exactamente iguales simplemente cambiando un comando, en este caso hemos usado el comando Measure-Object pero podriamos utilizar la función: ().count perfectamente:
+Get-Content .\unique.txt | Get-Unique | Measure-Object Solución / Get-Sort Cambiando el comando Get-Unique por Get-Sort -Unique:
+PS C:\users\century8\desktop&amp;gt; (Get-Content .\unique.txt | Get-Sort -Unique).count 696 </description>
+    </item>
+    
+    <item>
+      <title>Century09 / Underthewire</title>
+      <link>https://llo0zy.github.io/century/century9/</link>
+      <pubDate>Fri, 03 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/century/century9/</guid>
+      <description>Información La contraseña del siguiente nivel es la palabra que esta en la posición 161 del único archivo del directorio.
+Analizando el arhivo Al hacer un Get-Content simple podemos analizar que las palabras están separas por espacios, para estar más comodos vamos a reemplazar dichos espacios por un salto de linea:
+Archivo original Archivo modificado Como podemos ver por cada espacio que teniamos hemos hecho un salto de linea, lo podemos hacer de dicha manera o también usando el comando:</description>
+    </item>
+    
     <item>
       <title>Insider / HTB Forensics</title>
       <link>https://llo0zy.github.io/writeups/indiser/</link>
