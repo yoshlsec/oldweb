@@ -6,7 +6,19 @@
     <description>Recent content in challenge on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 31 Oct 2023 16:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intergalactic Recovery / HTB Forensics</title>
+      <link>https://llo0zy.github.io/writeups/intergalactic-recovery/</link>
+      <pubDate>Sat, 04 Nov 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/writeups/intergalactic-recovery/</guid>
+      <description>Información Nos dan 3 archivos de Raid 5 con información dañada, y nos piden a ver si podemos obtener algo de información o intentar restaurar dicha información
+Analisis strings Primero de todo vamos a hacer un comando: strings a los archivos .img:
+strings *.img -n 10 Al hacer este comando y ver por encima el output nos llama la atención el nombre de un pdf:
+imw_1337.pdf Investigando sobre RAID5 Buscando un poco en google, exacatamente con: raid 5 with 3 drives y podemos ver esta imagen muy representativa:</description>
+    </item>
+    
     <item>
       <title>Insider / HTB Forensics</title>
       <link>https://llo0zy.github.io/writeups/indiser/</link>

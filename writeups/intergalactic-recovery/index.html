@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Intergalactic Recovery / HTB Forensics</title>
+    <meta name="description" content="HackTheBox forensics challenge, easy">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, raid5, htb, dump'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/writeups/intergalactic-recovery/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Intergalactic Recovery / HTB Forensics">
+    <meta property="og:description" content="HackTheBox forensics challenge, easy">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intergalactic Recovery / HTB Forensics">
+    <meta name="twitter:description" content="HackTheBox forensics challenge, easy">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/writeups/intergalactic-recovery/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/writeups/intergalactic-recovery/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/writeups/intergalactic-recovery/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Intergalactic Recovery / HTB Forensics</h1>
+        <small role="doc-subtitle">HackTheBox forensics challenge, easy</small>
+        <p class="post-date">
+            November 4, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/challenge">challenge</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/forensics">forensics</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/raid5">raid5</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/htb">htb</a></li>
+        
+            <li class="post-tag"><a href="https://llo0zy.github.io/tags/dump">dump</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>Nos dan 3 archivos de <strong>Raid 5</strong> con información dañada, y nos piden a ver si podemos obtener algo de información o intentar restaurar dicha información</p>
+<h1 id="analisis-strings">Analisis strings</h1>
+<p>Primero de todo vamos a hacer un comando: <em>strings</em> a los archivos <em>.img</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strings *.img -n <span style="color:#ae81ff">10</span>
+</code></pre></div><p>Al hacer este comando y ver por encima el output nos llama la atención el nombre de un pdf:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">imw_1337.pdf
+</code></pre></div><h1 id="investigando-sobre-raid5">Investigando sobre RAID5</h1>
+<p>Buscando un poco en google, exacatamente con: <em>raid 5 with 3 drives</em> y podemos ver esta imagen muy representativa:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW50ZXJnYWxhY3RpYyBSZWNvdmVyeQo=/img1.png?raw=true" alt="img1"></p>
+<p>Al darnos cuenta, cada disco tiene un fragmento del contenido original, esto nos hace recordar al tipo de encriptación <strong>XOR</strong></p>
+<h2 id="xor">XOR</h2>
+<p>Aquí un pequeño calculo para que os hagais una idea:</p>
+<pre><code class="language-xor" data-lang="xor">10110
+01101
+</code></pre><p>El resultado de dicha combinación es: <em>11011</em> porque:</p>
+<ul>
+<li>1 y 1 = 0</li>
+<li>1 y 0 = 1</li>
+<li>0 y 1 = 1</li>
+<li>0 y 0 = 0</li>
+</ul>
+<h3 id="cambiando-nombres-de-archivos">Cambiando nombres de archivos</h3>
+<p>Lo que haremos será cambiar el nombre de los archivos por unos más legibles y haremos un pequeño script en python para hacer xor entre 2 discos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv fef0d1cd.img XOR1.img
+mv 06f98d35.img XOR2.img
+mv 0c584923.img output.img
+</code></pre></div><blockquote>
+<p>Más adelante al abrir el último pdf sale corrupto, esto será porque tenemos que reemplazar: XOR2 con output.img</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv output.img XOR2.img
+mv temp               
+mv temp output.img
+</code></pre></div><p>Si te estas preguntando el porque de los nombres es sencillo, si hacemos un <em>ls -l</em> para ver el tamaño de los archivos podemos ver que <em>XOR1.img</em> y <em>XOR2.img</em> tienen el mismo tamaño (5M) pero encambio: <em>output.img</em> tiene solo (3.7M) podiendo ser un disco con información dañada (sabemos esto porque al hacer un volcado de memoria suele ir en paquetes un tamaño determinado, al no tener dicho espacio nos puede parecer raro).</p>
+<h3 id="python-script">Python script</h3>
+<p>Ahora si, vamos a hacer un script con python para hacer un <em>XOR</em> entre: <em>XOR1 y XOR2</em>, para ello usaremos la libreria &ldquo;pwn&rdquo; de python, especificamente las librerias: <em>write, read y xor</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> read,write,xor
+
+disk1 <span style="color:#f92672">=</span> read(<span style="color:#e6db74">&#34;./XOR1.img&#34;</span>)
+disk2 <span style="color:#f92672">=</span> read (<span style="color:#e6db74">&#34;./XOR2.img&#34;</span>)
+
+disk3 <span style="color:#f92672">=</span> xor(disk1, disk2)
+write(<span style="color:#e6db74">&#34;./output.img&#34;</span>, disk3)
+</code></pre></div><p>Almacenando el resultado del xor en <em>disk3</em> para luego escribirlo en el archivo: <em>output.img</em>.</p>
+<h3 id="verificando-cambios">Verificando cambios</h3>
+<p>Ahora al hacer un strings al archivo <em>output.img</em> vemos que tenemos nueva información:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW50ZXJnYWxhY3RpYyBSZWNvdmVyeQo=/img2.png?raw=true" alt="img2"></p>
+<p>Dicho esto usaremos el comando <em>foremost</em> para ver si podemos extrar algún tipo de archivo como puede ser un pdf&hellip; al hacer el siguiente comando</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">foremost output.png
+</code></pre></div><p>nos saldra una nueva carpeta llamada <em>output</em> que en su interior tendra un archivo pdf, si lo intentamos abrir veremos que esta corrupto:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW50ZXJnYWxhY3RpYyBSZWNvdmVyeQo=/img3.png?raw=true" alt="img3"></p>
+<h1 id="montando-la-imagén-con-losetup">Montando la imagén con losetup</h1>
+<p>Este comando (<em>losetup</em>) sirve para asociar dispositivos en bucles (/dev/loop) con imagenes, es decir, nos permite montar el disco como si fuera un <em>livecd</em>, después de asociarlo lo podremos montar para manipularlo como otro dispositivo físico, aunque no lo sea&hellip;</p>
+<blockquote>
+<p>Atención si no tienes dispositivos con bucle puedes usar el siguiente comando: <code>sudo modprobe loop</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo losetup /dev/loop1 XOR1.img
+sudo losetup /dev/loop2 XOR2.img
+sudo losetup /dev/loop3 output.img
+</code></pre></div><h2 id="juntar-bucles">Juntar bucles</h2>
+<p>Ahora con el comando <em>mdadm</em> podremos juntas dichos bucles para luego montar la partición:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW50ZXJnYWxhY3RpYyBSZWNvdmVyeQo=/img5.png?raw=true" alt="img4"></p>
+<p>Como podemos ver tenemos varios parámetros que vamos a explicar uno por uno:</p>
+<ul>
+<li><em>&ndash;create</em> -&gt; Especificar que no queremos ni editar/borrar ninguna imagen</li>
+<li><em>&ndash;level=5</em> -&gt; Cuantas capas de datos hay en los bucles</li>
+<li><em>&ndash;raid-devices=3</em> -&gt; Indicar cuantos bucles hay en la <strong>Raid 5</strong></li>
+<li><em>/dev/md0</em> -&gt; Marcar el punto de salida para el archivo</li>
+</ul>
+<h2 id="montando-imagen">Montando imagen</h2>
+<p>Una vez que tenemos la imagen creada la montaremos para acceder a ella desde el usuario actual y no desde un &ldquo;<em>livecd</em>&rdquo;, para ello crearemos un directorio en: <strong>/mnt</strong> y luego haremos la montura desde <strong>/dev/md0</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /mnt/raid
+sudo mount /dev/md0 /mnt/raid
+</code></pre></div><p>Al listar el contenido del directorio <strong>/mnt/raid</strong> podemos ver el nombre del pdf que nos encontramos al principio de la máquina: <strong>imw_1337.pdf</strong>, ahora vamos a abrirlo para ver que nos encontramos:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/SW50ZXJnYWxhY3RpYyBSZWNvdmVyeQo=/img5.png?raw=true" alt="img5"></p>
+<p>Como podemos ver nos sale la contraseña dentro del PDF y tenemos el disco restaurado, felicidades!</p>
+<h1 id="limpiando-proceso">Limpiando proceso</h1>
+<p>Una vez hecho esto vamos a dejar disponibles los <em>loops</em> y puntos de montaje, para ello vamos a empezar desmontando el directorio: <em>/mnt/raid</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo umount /mnt/raid
+</code></pre></div><p>Borrando diretorio <em>/dev/md0</em> y borrando contenido de los loops:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm -rf /dev/md0
+
+sudo losetup -d /dev/loop* 2&gt;/dev/null
+</code></pre></div><p>Y ya tendriamos todo para hacer la máquina otra vez!!!</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/writeups/indiser/">
+            &#8592;
+            Previous:
+            Insider / HTB Forensics
+        </a>
+    </p>
+    <p class="prev-post-date">
+        October 31, 2023
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a></li>
+    <li><a href="#analisis-strings">Analisis strings</a></li>
+    <li><a href="#investigando-sobre-raid5">Investigando sobre RAID5</a>
+      <ul>
+        <li><a href="#xor">XOR</a>
+          <ul>
+            <li><a href="#cambiando-nombres-de-archivos">Cambiando nombres de archivos</a></li>
+            <li><a href="#python-script">Python script</a></li>
+            <li><a href="#verificando-cambios">Verificando cambios</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#montando-la-imagén-con-losetup">Montando la imagén con losetup</a>
+      <ul>
+        <li><a href="#juntar-bucles">Juntar bucles</a></li>
+        <li><a href="#montando-imagen">Montando imagen</a></li>
+      </ul>
+    </li>
+    <li><a href="#limpiando-proceso">Limpiando proceso</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

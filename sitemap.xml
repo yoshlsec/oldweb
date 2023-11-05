@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://llo0zy.github.io/tags/challenge/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/tags/dump/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/tags/forensics/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/tags/htb/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/writeups/intergalactic-recovery/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/tags/raid5/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/tags/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
+    <loc>https://llo0zy.github.io/writeups/</loc>
+    <lastmod>2023-11-04T15:51:15+01:00</lastmod>
+  </url><url>
     <loc>https://llo0zy.github.io/century/</loc>
     <lastmod>2023-11-04T12:51:15+01:00</lastmod>
   </url><url>
@@ -30,12 +57,6 @@
     <lastmod>2023-11-04T12:51:15+01:00</lastmod>
   </url><url>
     <loc>https://llo0zy.github.io/tags/ssh/</loc>
-    <lastmod>2023-11-04T12:51:15+01:00</lastmod>
-  </url><url>
-    <loc>https://llo0zy.github.io/tags/</loc>
-    <lastmod>2023-11-04T12:51:15+01:00</lastmod>
-  </url><url>
-    <loc>https://llo0zy.github.io/</loc>
     <lastmod>2023-11-04T12:51:15+01:00</lastmod>
   </url><url>
     <loc>https://llo0zy.github.io/tags/windows/</loc>
@@ -68,9 +89,6 @@
     <loc>https://llo0zy.github.io/century/century9/</loc>
     <lastmod>2023-11-03T15:51:15+01:00</lastmod>
   </url><url>
-    <loc>https://llo0zy.github.io/tags/challenge/</loc>
-    <lastmod>2023-10-31T16:51:15+01:00</lastmod>
-  </url><url>
     <loc>https://llo0zy.github.io/tags/dumpzilla/</loc>
     <lastmod>2023-10-31T16:51:15+01:00</lastmod>
   </url><url>
@@ -83,16 +101,7 @@
     <loc>https://llo0zy.github.io/tags/firefox_decrypt/</loc>
     <lastmod>2023-10-31T16:51:15+01:00</lastmod>
   </url><url>
-    <loc>https://llo0zy.github.io/tags/forensics/</loc>
-    <lastmod>2023-10-31T16:51:15+01:00</lastmod>
-  </url><url>
-    <loc>https://llo0zy.github.io/tags/htb/</loc>
-    <lastmod>2023-10-31T16:51:15+01:00</lastmod>
-  </url><url>
     <loc>https://llo0zy.github.io/writeups/indiser/</loc>
-    <lastmod>2023-10-31T16:51:15+01:00</lastmod>
-  </url><url>
-    <loc>https://llo0zy.github.io/writeups/</loc>
     <lastmod>2023-10-31T16:51:15+01:00</lastmod>
   </url><url>
     <loc>https://llo0zy.github.io/writeups/alien-cradle/</loc>
