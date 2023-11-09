@@ -6,7 +6,18 @@
     <description>Recent content in challenge on Welcome to Jaime Gómez&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 04 Nov 2023 15:51:15 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Nov 2023 13:05:23 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trivial Flag Transfer Protocol</title>
+      <link>https://llo0zy.github.io/trivial-flag-transfer-protocol/</link>
+      <pubDate>Thu, 09 Nov 2023 13:05:23 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/trivial-flag-transfer-protocol/</guid>
+      <description>Información Nos han dado un archivo pcapng el cuál guarda paquetes de red con el protocolo TFTP y SSDP, y como buenos forenses que somos vamos primero a investigar que son estos protocolos:
+Protocolo TFTP El acronimo de: Trivial File Transfer Protocol, es un protocolo cliente-servidor que regula la trasnferencia de archivos en redes, sin encriptarlas con SSL u otros protocolos, ya deducimos que estamos hablando ante un UDP.
+Protocolo SSDP Protocolo el cúal sirve para la búsqueda de dispositivos UPnP dentro de una red, siendo utilizado tanto en unicast como en multicast, aquí os dejo un pdf que explica muy bien el funcionamiento de dicho protocolo y sobre los dispositivos UPnp: https://biblus.</description>
+    </item>
+    
     <item>
       <title>Intergalactic Recovery / HTB Forensics</title>
       <link>https://llo0zy.github.io/writeups/intergalactic-recovery/</link>
@@ -60,7 +71,6 @@ n=`whoami` h=`hostname` path=&amp;#39;/usr/local/bin/service&amp;#39; if [[ &amp
       <description>Misión Obtener el token secreto del programador Junior
 Analizando directorio Nada más descomprimido el archivo podemos ver que esta la carpeta .git:
 Listado de logs Haciendo un git log vemos que hay varios cambios:
-![https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/listalogs.png.png?raw=true]
 Fijandonos en los comentarios que dejan los programadores que hicieron cambios vemos que en uno nos menciona acerca de un token&amp;hellip;
 Thanks to contributors, I removed the unique token as it was a security risk. Thanks for reporting responsibly!</description>
     </item>

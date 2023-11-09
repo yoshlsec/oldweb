@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Trivial Flag Transfer Protocol</title>
+    <meta name="description" content="90 points forensics PicoCTF">
+    <meta name="keywords" content='blogs, informatica, forense, porfolio, hacking, jaime gómez martínez, jaime gomez martinez, jaime gomez, challenge, forensics, wireshark, picoCTF, steghide, cripto'>
+
+    <meta property="og:url" content="https://llo0zy.github.io/trivial-flag-transfer-protocol/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Trivial Flag Transfer Protocol">
+    <meta property="og:description" content="90 points forensics PicoCTF">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+    <meta property="og:image:secure_url" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trivial Flag Transfer Protocol">
+    <meta name="twitter:description" content="90 points forensics PicoCTF">
+    <meta property="twitter:domain" content="https://llo0zy.github.io/trivial-flag-transfer-protocol/">
+    <meta property="twitter:url" content="https://llo0zy.github.io/trivial-flag-transfer-protocol/">
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE">
+
+    
+    <link rel="canonical" href="https://llo0zy.github.io/trivial-flag-transfer-protocol/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.1cad96fd391c2b9ae7d512622db1ad1da8fd7f021e784b7b7697075309969323.js" integrity="sha256-HK2W/TkcK5rn1RJiLbGtHaj9fwIeeEt7dpcHUwmWkyM="></script>
+
+    
+    
+    Porfolio web | yoshl
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        <div class="avatar">
+            <a href="https://llo0zy.github.io/">
+                <img src='https://media.licdn.com/dms/image/D4D03AQFoKjKng-aj_w/profile-displayphoto-shrink_200_200/0/1691074052812?e=2147483647&v=beta&t=gsKoe1n-x31WkNFjxOcCjg3dVqLsqPuJ-d_I7JpS4bE' alt="avatar" />
+            </a>
+        </div>
+        <div class="nav-title">
+            <a class="nav-brand" href="https://llo0zy.github.io/">Jaime Gómez</a>
+        </div>
+        
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://llo0zy.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/Llo0zy"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Trivial Flag Transfer Protocol</h1>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="información">Información</h1>
+<p>Nos han dado un archivo <strong>pcapng</strong> el cuál guarda paquetes de red con el protocolo <strong>TFTP y SSDP</strong>, y como buenos forenses que somos vamos primero a investigar que son estos protocolos:</p>
+<h2 id="protocolo-tftp">Protocolo TFTP</h2>
+<p>El acronimo de: <strong>T</strong><em>rivial</em> <strong>F</strong><em>ile</em> <strong>T</strong><em>ransfer</em> <strong>P</strong><em>rotocol</em>, es un protocolo cliente-servidor que regula la trasnferencia de archivos en redes, sin encriptarlas con <strong>SSL</strong> u otros protocolos, ya deducimos que estamos hablando ante un <strong>UDP</strong>.</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img1.png?raw=true" alt="img1"></p>
+<h2 id="protocolo-ssdp">Protocolo SSDP</h2>
+<p>Protocolo el cúal sirve para la búsqueda de dispositivos <em>UPnP</em> dentro de una red, siendo utilizado tanto en unicast como en multicast, aquí os dejo un pdf que explica muy bien el funcionamiento de dicho protocolo y sobre los dispositivos <em>UPnp</em>: <a href="https://biblus.us.es/bibing/proyectos/abreproy/11954/fichero/4+-+CAP.3+-+Tecnologia+UPnP.pdf">https://biblus.us.es/bibing/proyectos/abreproy/11954/fichero/4+-+CAP.3+-+Tecnologia+UPnP.pdf</a></p>
+<p><strong>Arquitectura de UPnP</strong>
+<img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img2.png?raw=true" alt="img2"></p>
+<h1 id="analisis-de-wireshark">Analisis de wireshark</h1>
+<p>Una vez sabiendo como funcionan los protocolos capturados de la red, leyendo la pequeña descripción de los paquetes principales nos damos cuenta que un cliente esta accediendo a varios archivos, dichos nombres son:</p>
+<ul>
+<li><strong>instructions.txt</strong></li>
+<li><strong>program.deb</strong></li>
+</ul>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img3.png?raw=true" alt="img3"></p>
+<h2 id="exportando-archivos">Exportando archivos</h2>
+<p>Por comodidad vamos a extraer los posibles archivos de la captura <em>pcapng</em>:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img4.png?raw=true" alt="img4"></p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img5.png?raw=true" alt="img5"></p>
+<p>Como podemos ver nos aparecen 6 archivos y podemos identificar los 2 mencionados anteriormente, acontinuación le damos a <strong>Save All</strong> o <strong>Guardar todos</strong>, dependiendo de como tengas configurado <em>wireshark</em> con los idiomas y ya tendriamos los paquetes en nuestro equipo:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img6.png?raw=true" alt="img6"></p>
+<h1 id="analizando-archivos">Analizando archivos</h1>
+<p>Con el comando: <strong>file</strong> que ya viene incluido en los dispositivos: <em>Unix</em> nos indica que tipo de archivo es el selecionado, en este caso vamos a seleccionar todos los archivos extraidos para eso usaremos el símbolo: <strong>*</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ file *            
+
+instructions.txt: ASCII text
+picture1.bmp:     PC bitmap, Windows 3.x format, <span style="color:#ae81ff">605</span> x <span style="color:#ae81ff">454</span> x 24, image size 824464, resolution <span style="color:#ae81ff">5669</span> x <span style="color:#ae81ff">5669</span> px/m, cbSize 824518, bits offset <span style="color:#ae81ff">54</span>
+picture2.bmp:     data
+picture3.bmp:     data
+plan:             ASCII text
+program.deb:      Debian binary package <span style="color:#f92672">(</span>format 2.0<span style="color:#f92672">)</span>, with control.tar.gz, data compression xz
+tftp.pcapng:      pcapng capture file - version 1.0
+</code></pre></div><h2 id="leyendo-los-txt">Leyendo los txt</h2>
+<h3 id="instructionstxt">instructions.txt</h3>
+<p>Al hacer un <em>cat</em> al archivo vemos que no es un formato legible y tampoco esta encodeado en <em>Base64</em> entonces vamos a probar con la famosa &ldquo;encriptación&rdquo; <em>ROT13</em> para ello os voy a compartir un scirpt que tengo hecho para agilizar este proceso:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rot13de: aliased to tr <span style="color:#e6db74">&#39;[a-zA-Z]&#39;</span> <span style="color:#e6db74">&#39;[n-za-mN-ZA-M]&#39;</span>
+</code></pre></div><p>Una vez con este comando configurado vamos a leer el archivo en texto plano:</p>
+<pre><code class="language-ascii" data-lang="ascii">TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN
+</code></pre><p>Vamos a poner espacios para saber que nos esta diciendo:</p>
+<pre><code class="language-ascii" data-lang="ascii">TFTP DOESNT ENCRYPT OUR TRAFFIC SO WE MUST DISGUISE OUR FLAG TRANSFER. FIGURE OUT A WAY TO HIDE THE FLAG AND I WILL CHECK BACK FOR THE PLAN
+</code></pre><h3 id="flag">flag</h3>
+<p>Como el archivo anterior usaremos <em>ROT13</em>:</p>
+<pre><code class="language-ascii" data-lang="ascii">IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+</code></pre><p>Ahora poniendo los espacios:</p>
+<pre><code class="language-ascii" data-lang="ascii">I USED THE PROGRAM AND HID IT WITH - DUEDILIGENCE. CHECK OUT THE PHOTOS
+</code></pre><h2 id="descomprimiendo-el-deb">Descomprimiendo el .deb</h2>
+<p>Con esta información no nos sirve, entonces gracias al comando <em>7z</em> podemos ver que archivos tiene comprimidos, al hacerlo nos damos cuenta que tiene el archivo: <strong>data.tar</strong> en su interior y nuevamente vamos a descomprimir este:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img7.png?raw=true" alt="img7"></p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img8.png?raw=true" alt="img8"></p>
+<p>Al descomprimirlo nos mostrara un directorio con el nombre <strong>usr</strong>, si investigamos un poco de este nos vamos a dar cuenta que tiene información relacionada con <em>steghide</em> un comando usado para ver información y archivos ocultos en imagenes, videos u otros archivos:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img9.png?raw=true" alt="img9"></p>
+<h1 id="usando-steghide">Usando: steghide</h1>
+<p>Investigando acerca del comando vemos que es muy sencillo de instalar y usar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install steghide
+</code></pre></div><p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img10.png?raw=true" alt="img10"></p>
+<p>Ahora sabiendo lo básico del comando podemos usarlo, probando con los 3 archivos con extensión: <strong>.bmp</strong> solo funcionará con el archivo:</p>
+<ul>
+<li><strong>picture3.bmp</strong></li>
+</ul>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img11.png?raw=true" alt="img11"></p>
+<p>Viendo que nos pide una contraseña, recordamos que en el archivo <strong>flag</strong> ponia que usaron el programa con: <em>DUEDILIGENCE</em>, entonces probaremos este como contraseña:</p>
+<p><img src="https://github.com/Llo0zy/images-web/blob/main/UGljb0NURi1Ucml2aWFsRmxhZ1RyYW5zZmVyUHJvdG9jb2wK/img12.png?raw=true" alt="img12"></p>
+<p>Y ya tendríamos nuestra flag del <em>CTF Trivial Flag Transfer Protocol</em>: <code>picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}</code></p>
+
+        </p>
+    </div>
+</div>
+
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#información">Información</a>
+      <ul>
+        <li><a href="#protocolo-tftp">Protocolo TFTP</a></li>
+        <li><a href="#protocolo-ssdp">Protocolo SSDP</a></li>
+      </ul>
+    </li>
+    <li><a href="#analisis-de-wireshark">Analisis de wireshark</a>
+      <ul>
+        <li><a href="#exportando-archivos">Exportando archivos</a></li>
+      </ul>
+    </li>
+    <li><a href="#analizando-archivos">Analizando archivos</a>
+      <ul>
+        <li><a href="#leyendo-los-txt">Leyendo los txt</a>
+          <ul>
+            <li><a href="#instructionstxt">instructions.txt</a></li>
+            <li><a href="#flag">flag</a></li>
+          </ul>
+        </li>
+        <li><a href="#descomprimiendo-el-deb">Descomprimiendo el .deb</a></li>
+      </ul>
+    </li>
+    <li><a href="#usando-steghide">Usando: steghide</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>
+        © 2023 - All rights reserved
+    </span>
+</footer>
+</body>
+</html>

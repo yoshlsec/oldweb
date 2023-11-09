@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>picoCTF on Welcome to Jaime Gómez&#39;s blog</title>
+    <link>https://llo0zy.github.io/tags/picoctf/</link>
+    <description>Recent content in picoCTF on Welcome to Jaime Gómez&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 09 Nov 2023 13:05:23 +0100</lastBuildDate><atom:link href="https://llo0zy.github.io/tags/picoctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trivial Flag Transfer Protocol</title>
+      <link>https://llo0zy.github.io/trivial-flag-transfer-protocol/</link>
+      <pubDate>Thu, 09 Nov 2023 13:05:23 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/trivial-flag-transfer-protocol/</guid>
+      <description>Información Nos han dado un archivo pcapng el cuál guarda paquetes de red con el protocolo TFTP y SSDP, y como buenos forenses que somos vamos primero a investigar que son estos protocolos:
+Protocolo TFTP El acronimo de: Trivial File Transfer Protocol, es un protocolo cliente-servidor que regula la trasnferencia de archivos en redes, sin encriptarlas con SSL u otros protocolos, ya deducimos que estamos hablando ante un UDP.
+Protocolo SSDP Protocolo el cúal sirve para la búsqueda de dispositivos UPnP dentro de una red, siendo utilizado tanto en unicast como en multicast, aquí os dejo un pdf que explica muy bien el funcionamiento de dicho protocolo y sobre los dispositivos UPnp: https://biblus.</description>
+    </item>
+    
+  </channel>
+</rss>

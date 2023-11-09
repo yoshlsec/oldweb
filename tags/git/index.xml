@@ -96,7 +96,6 @@ WELCOME TO THE UPPERCASE SHELL &amp;gt;&amp;gt; ls sh: 1: LS: Permission denied 
       <description>Misión Obtener el token secreto del programador Junior
 Analizando directorio Nada más descomprimido el archivo podemos ver que esta la carpeta .git:
 Listado de logs Haciendo un git log vemos que hay varios cambios:
-![https://github.com/Llo0zy/images-web/blob/main/SWxsdW1pbmF0aW9uCg==/listalogs.png.png?raw=true]
 Fijandonos en los comentarios que dejan los programadores que hicieron cambios vemos que en uno nos menciona acerca de un token&amp;hellip;
 Thanks to contributors, I removed the unique token as it was a security risk. Thanks for reporting responsibly!</description>
     </item>
