@@ -127,6 +127,16 @@ Listando archivos En este caso nos traen varios archivos, aquí un listado de el
     </item>
     
     <item>
+      <title>Logger / HTB Forensics</title>
+      <link>https://llo0zy.github.io/writeups/logger/</link>
+      <pubDate>Sat, 21 Oct 2023 15:51:15 +0100</pubDate>
+      
+      <guid>https://llo0zy.github.io/writeups/logger/</guid>
+      <description>Misión Nos han dado un pcapng con un filtro ya hecho de un protocolo usb en el cual nos informan de un posible keylogger (malware que te lee las teclas), y tenemos que encontrar lo que el keylogger recopilo.
+Filtrando con Wireshark Empezaremos filtrando por los paquetes que tengan contenido en su interior, para esto el frame del paquete tendra que ser 0x01, en [[magik numbers]] equivalente a: 1b 00 20</description>
+    </item>
+    
+    <item>
       <title>Export / HTB Forensics</title>
       <link>https://llo0zy.github.io/writeups/export/</link>
       <pubDate>Fri, 13 Oct 2023 15:51:15 +0100</pubDate>
